@@ -1,0 +1,327 @@
+// -------------------------------------------------------------
+// Template : HealthOS v1.0
+// Author : Bharani Muthukumaraswamy <bharani@abhayam.co.in>
+// Date : 08-10-2012
+// Tags : Minimal, friendly, responsive, clean, light
+// ------------------------------------------------------------- 
+
+// Table of Content
+//-----------------------------------------
+// - Variables and Mixins
+// - Shared Styles
+// - Dashboard Page
+
+
+
+// ---------------------------------------
+// Variables and Mixins
+// ---------------------------------------
+
+$light_gray: #f8f8f8;
+$medium_gray: #f1f1f1;
+$dark_gray: #c4c4c4;
+$light_blue: #cddff1;
+$dark_blue: #3838A3;
+
+@mixin rounded($radius: 3px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($time: 0.3s) {
+  -moz-transition: all $time ease-in;
+  -webkit-transition: all $time ease-in;
+  -o-transition: all $time ease-in;
+  -ms-transition: all $time ease-in;
+  transition: all $time ease-in;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  -moz-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -ms-box-shadow: $x $y $blur $color;
+  -o-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+// ---------------------------------------
+// Shared styles
+// ---------------------------------------
+
+body {
+  overflow-x: hidden;
+}
+
+a:hover {
+  color: lighten($dark_blue, 10%);
+}
+
+a:active {
+  color: darken($dark_blue, 10%);
+}
+
+header#header {
+  span.foundicon-plus {
+    padding-right: 10px;
+    font-size: 15px;
+  } 
+}
+
+section.jumbotron {
+  margin-top: 60px;
+  padding: 10px 0;
+  background: lighten($light_blue, 11%);
+  border-bottom: 1px solid lighten($light_blue, 5%);
+  div.ask_main, div.find_main {
+    h2 {
+      font-size: 30px;
+      span.foundicon-search {
+        padding-right: 10px;
+        position: relative;
+        top: 8px;
+      }
+      color: $dark_blue;
+    }
+
+    .row.collapse {
+      margin-top: 15px;
+      input.ask, a.button {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 22px;
+      }
+
+      a.button {
+        line-height: 0;
+      }
+    }
+  }
+
+  div.find_main {
+    h2 {
+      position: relative;
+      top: -5px;
+      span.foundicon-location {
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+
+  .find_doctor_field {
+    margin-top: 15px;
+
+    .button.radius {
+      padding: 8px 20px 9px;
+    }
+  }
+}
+
+
+
+.top-bar ul li .round.progress.success {
+  width: 80%;
+  margin-left: 10%;
+  height: 12px;
+}
+
+.top-bar ul > li.search form {
+  margin-top: 10px;
+}
+
+.top-bar ul > li.search form input[type="text"] {
+  width: 64%;
+  padding: 0 5px;
+}
+.top-bar ul > li.search form input[type="text"] + .button {
+  padding: 7px 12px 7px;
+}
+
+
+
+
+// ---------------------------------------
+// Dashboard content
+// ---------------------------------------
+
+#content {
+  margin-top: 30px;
+
+
+  .feed_entry {
+    padding: 20px;
+    border: 1px solid $medium_gray;
+    border-top: 4px solid $light_blue;
+    overflow: hidden;
+    margin-bottom: 30px;
+    .meta {
+      background: $light_gray;
+      margin-left: -20px;
+      width: 110%;
+      padding-top: 10px;
+      height: 45px;
+      &.top {
+        margin-top: -20px;
+      }
+
+      &.bottom {
+        position: relative;
+        top: 20px;
+        height: 52px;
+        background: $light_blue;
+        button.button {
+          margin-right: 30px;
+          padding: 5px 18px 6px;
+          font-size: 14px;
+          span.foundicon-checkmark {
+            padding-right: 10px;
+            position: relative;
+            top: 2px;
+          } 
+        }
+      }
+      img {
+        padding-right: 10px;
+        padding-top: 0;
+        display: block;
+        float: left;
+        margin-top: 4px;
+      }
+
+      p.time {
+        color: darken($dark_gray, 20%);
+        font-style: italic;
+        font-size: 12px;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 4px;
+      }
+    }
+    .question {
+      margin-top: 0px;
+      h3 {
+        margin: 0;
+      }
+      a:hover h3 {
+        color: $dark_blue;
+      }
+      a:active h3 {
+        color: darken($dark_blue, 10%);
+      }
+    }
+
+    .answer {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    &.doctor_list {
+      h3.doctor_name {
+        margin-top: 0;
+      }
+      .icon {
+        position: relative;
+        left: -2px;
+        top: 2px;
+      }
+      .meta.bottom {
+        width: 120%;
+        height: 55px;
+      }
+
+      .about_doctor li {
+        font-size: 14px;
+        padding-top: 5px;
+      }
+    }
+  }
+
+
+  .nav_sidebar {
+    .health_profile_header {
+      font-size: 14px;
+      color: lighten(#323232, 15%);
+      strong {
+        color: #323232;
+      }
+    }
+
+    dl.tabs.vertical dd.active a {
+      background: #3772AC;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.7);
+    }
+
+    dl.tabs.vertical dd a:hover {
+      background: darken(#F2F2F2, 10%);
+    }
+
+    dl.tabs.vertical dd.active a:hover {
+      background: #3772AC;
+    }
+
+    dl.tabs.vertical dd.active {
+      border-left-color: #2B5885;
+      border-top-color: #2B5885;
+    }
+
+    .profile_image_holder {
+      margin-bottom: 20px;
+      position: relative;
+
+      .button.edit_link {
+        position: absolute;
+        top: 85px;
+        left: 70px;
+        display: none;
+      }
+
+      &:hover .edit_link {
+        display: block;
+      }
+    }
+  }
+
+  .recommended_topics {
+    overflow: hidden;
+    h3 {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-top: -20px;
+      margin-left: -20px;
+      width: 124%;
+      padding: 10px;
+      background: darken($dark_gray, 10%);
+    }
+
+    ul {
+      padding: 5px;
+      li {
+        padding: 10px  0px !important;
+        border-top: 1px solid darken($medium_gray, 5%);
+        &:hover  {
+          border-color: darken($medium_gray, 10%);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

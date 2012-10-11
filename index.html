@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<!--
+  The woods are lovely, dark, and deep,
+  But I have promises to keep,
+  And miles to go before I sleep,
+  And miles to go before I sleep.
+  ~ Robert Frost
+-->
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<title>HealthOS</title>
+
+	<link rel="stylesheet" href="stylesheets/app.css">
+	<link rel="stylesheet" href="stylesheets/general_foundicons.css">
+	<link rel="stylesheet" href="stylesheets/base.css">
+
+
+	<link rel="stylesheet" href="stylesheets/piemenu.css">
+	<script src="javascripts/foundation/modernizr.foundation.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<!-- Header and Nav -->
+  <header id="header" class="fixed contain-to-grid">
+	  <nav class="top-bar">
+
+		  <ul>
+		    <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>HealthOS</a></h1></li>
+		    <li class="toggle-topbar"><a href="#"></a></li>
+		  </ul>
+		  <section>
+		    <ul class="left">
+		    	<li class="divider"></li>
+		    </ul>
+
+		    <ul class="right">
+		    	<!-- <li class="divider"></li>
+		    	<li class="search">
+					  <form class="collapse">
+					    <input type="text" placeholder="eg: Diabetes">
+					    <button type="submit" class="secondary radius button">Search</button>
+					  </form>
+					</li> -->
+
+          <li class="divider"></li>
+          <li class="active"><a href="#">Questions</a></li>
+          
+          <li class="divider"></li>
+          <li><a href="#">Doctors</a></li>
+          
+          <li class="divider"></li>
+          <li><a href="#">Appointments</a></li>
+
+          <li class="divider"></li>
+          <li><a href="#">Healthline</a></li>
+
+		    	<li class="divider"></li>
+					<li class="has-dropdown">
+			      <a href="#"><img src="http://placehold.it/20x20&text=[img]" /> Hi Nikhil</a>
+
+			      <ul class="dropdown">
+			      	<li><label>Profile</label></li>
+			      	<li class="divider"></li>
+			        <li><a href="#">View Profile</a></li>
+			        <li><a href="#">Edit Profile</a></li>
+
+              <li class="divider"></li>
+              <li><label>Health Meter</li>
+              <li><div class="round progress success"><span class="meter"></span></div></li> 
+
+			        <li class="divider"></li>
+			        <li><a href="#">Logout</a></li>
+			      </ul>
+
+			    </li>
+
+		    </ul>
+		  </section>
+		</nav>
+	</header>
+  
+  <!-- End Header and Nav -->
+
+  <!-- Ask Question -->
+  <section class="jumbotron">
+		<div class="row ask_main">
+			<div class="four columns">
+				<h2><span class="foundicon-search"></span>Ask a question</h2>
+			</div>
+
+			<div class="eight columns">
+		    <div class="row collapse">
+		      <div class="nine mobile-three columns">
+		        <input type="text" class="ask" placeholder="Type any health related question" />
+		      </div>
+		      <div class="three mobile-one columns">
+		        <a href="#" class="postfix button expand">Ask!</a>
+		      </div>
+		    </div>
+		  </div>
+		</div><!--row-->
+	</section>
+
+
+  
+  
+  <div class="row" id="content">    
+    
+    <!-- Main Feed -->
+
+    <div class="eight columns">
+
+    	
+      
+      <!-- Feed Entry -->
+      <div class="row feed_entry">
+      	<div class="row meta top">
+
+	        <div class="eight columns">
+	        	<p class="doctor_name"><img src="http://placehold.it/20x20&text=[img]" /><a href="#"><strong>Dr. Barry Rose </strong> </a>answered:
+	        </div>
+
+	        <div class="four columns">
+	        	<p class="time">42 minutes ago</p>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row question">
+	        <div class="twelve column">
+	          <a href="#"><h3 class="subheader">When I had my appendix removed was neg for appedicitis. It was hard, fibrous, and contained lesions. Is this common? What causes this?</h3></a>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row answer">
+	      	<div class="img_wrapper four columns">
+	      		<a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+	      	</div><!--img_wrapper-->
+
+	      	<div class="answer_text eight columns">
+	      		<p>Fibrous obliteration of the appendix" is a common finding in incidentally removed normal appendices; it is of no clinical concern. Not sure what "lesions" refers to, however.</p>
+	      	</div><!--answer_text-->
+	      </div><!--row-->
+
+	      <div class="row meta bottom">
+		      <div class="share_container nine-columns">
+		      	<div class="share_options_1" >
+			        <a class="menu_button" href="#" title="Toggle"><span>Menu Toggle</span></a>
+			        <ul class="menu_option">
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			        </ul>
+			    	</div>
+			    </div>
+
+	      	<div class="thank_container three columns">
+	      		<button class="button tiny"><span class="foundicon-checkmark"></span>Thank!</button>
+	      	</div>
+	      </div>
+      </div>
+      <!-- End Feed Entry -->
+
+            <!-- Feed Entry -->
+      <div class="row feed_entry">
+      	<div class="row meta top">
+
+	        <div class="eight columns">
+	        	<p class="doctor_name"><img src="http://placehold.it/20x20&text=[img]" /><a href="#"><strong>Dr. Barry Rose </strong> </a>answered:
+	        </div>
+
+	        <div class="four columns">
+	        	<p class="time">42 minutes ago</p>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row question">
+	        <div class="twelve column">
+	          <a href="#"><h3 class="subheader">When I had my appendix removed was neg for appedicitis. It was hard, fibrous, and contained lesions. Is this common? What causes this?</h3></a>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row answer">
+	      	<div class="img_wrapper four columns">
+	      		<a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+	      	</div><!--img_wrapper-->
+
+	      	<div class="answer_text eight columns">
+	      		<p>Fibrous obliteration of the appendix" is a common finding in incidentally removed normal appendices; it is of no clinical concern. Not sure what "lesions" refers to, however.</p>
+	      	</div><!--answer_text-->
+	      </div><!--row-->
+
+	      <div class="row meta bottom">
+		      <div class="share_container nine-columns">
+		      	<div class="share_options_2" >
+			        <a class="menu_button" href="#" title="Toggle"><span>Menu Toggle</span></a>
+			        <ul class="menu_option">
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			        </ul>
+			    	</div>
+			    </div>
+
+	      	<div class="thank_container three columns">
+	      		<button class="button tiny"><span class="foundicon-checkmark"></span>Thank!</button>
+	      	</div>
+	      </div>
+      </div>
+      <!-- End Feed Entry -->
+
+            <!-- Feed Entry -->
+      <div class="row feed_entry">
+      	<div class="row meta top">
+
+	        <div class="eight columns">
+	        	<p class="doctor_name"><img src="http://placehold.it/20x20&text=[img]" /><a href="#"><strong>Dr. Barry Rose </strong> </a>answered:
+	        </div>
+
+	        <div class="four columns">
+	        	<p class="time">42 minutes ago</p>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row question">
+	        <div class="twelve column">
+	          <a href="#"><h3 class="subheader">When I had my appendix removed was neg for appedicitis. It was hard, fibrous, and contained lesions. Is this common? What causes this?</h3></a>
+	        </div>
+	      </div><!--row-->
+
+	      <div class="row answer">
+	      	<div class="img_wrapper four columns">
+	      		<a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+	      	</div><!--img_wrapper-->
+
+	      	<div class="answer_text eight columns">
+	      		<p>Fibrous obliteration of the appendix" is a common finding in incidentally removed normal appendices; it is of no clinical concern. Not sure what "lesions" refers to, however.</p>
+	      	</div><!--answer_text-->
+	      </div><!--row-->
+
+	      <div class="row meta bottom">
+		      <div class="share_container nine-columns">
+		      	<div class="share_options_3" >
+			        <a class="menu_button" href="#" title="Toggle"><span>Menu Toggle</span></a>
+			        <ul class="menu_option">
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			          <li><a href="#"><span>Item</span></a></li>
+			        </ul>
+			    	</div>
+			    </div>
+
+	      	<div class="thank_container three columns">
+	      		<button class="button tiny"><span class="foundicon-checkmark"></span>Thank!</button>
+	      	</div>
+	      </div>
+      </div>
+      <!-- End Feed Entry -->
+ 
+    </div><!--six columns-->
+    
+    
+    <!-- Nav Sidebar -->
+    <!-- <div class="nav_sidebar three columns pull-six">
+      <div class="panel">
+      
+        <dl class="vertical tabs">
+          <dd class="active"><a href="#">Your Questions</a></dd>
+          <dd><a href="#">News Feed</a></dd>
+          <dd>
+          	<a href="#">Healthline</a>
+          </dd>
+          <dd><a href="#">Questions</a></dd>
+          <dd><a href="#">Doctors</a></dd>
+          <dd><a href="#">Appointments</a></dd>
+        </dl>
+        
+      </div>
+
+
+      <div class="panel">
+      	<a href="#" class="th profile_image_holder">
+        	<img src="http://placehold.it/300x240&text=[img]" />
+        	<span href="#" class="tiny button edit_link">Edit profile</span>
+        </a>
+
+      	<h5 class="health_profile_header">Health profile: <strong>50% complete</strong></h5>
+      	<div class="round progress success"><span class="meter"></span></div>
+      </div>
+
+      
+    </div> -->
+    
+    
+    <!-- Right Sidebar -->
+    <aside class="four columns">
+      <div class="panel recommended_topics">
+      	<h3>Recommended Topics</h3>
+
+      	<div class="row">
+      		<ul class="block-grid one-up">
+  					<li>Diabetes risks <button class="tiny button right secondary">Follow</button></li>
+  					<li>Breast cancer <button class="tiny button right secondary">Follow</button></li>
+  					<li>Skin cancer <button class="tiny button right secondary">Follow</button></li>
+  					<li>Prostate cancer <button class="tiny button right secondary">Follow</button></li>
+  					<li>Psoriasis <button class="tiny button right secondary">Follow</button></li>
+						<li>Basal cell <button class="tiny button right secondary">Follow</button></li>
+  					<li>Colon cancer <button class="tiny button right secondary">Follow</button></li>
+  					<li>Vascular<button class="tiny button right secondary">Follow</button></li>
+  				</ul>
+      		
+      	</div>
+      	
+      	
+      </div><!--panel-->
+
+    </aside>
+    
+  </div>
+    
+  
+  <!-- Footer -->
+  
+  <footer>
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="five columns">
+          <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
+        </div>
+        <div class="seven columns">
+          <ul class="link-list right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+  
+	
+	<!-- Included JS Files (Uncompressed) -->
+	<script src="javascripts/foundation/jquery.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.accordion.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.alerts.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.buttons.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.forms.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.mediaQueryToggle.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.navigation.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.orbit.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.reveal.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.tabs.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.tooltips.js"></script>
+	<script src="javascripts/foundation/jquery.foundation.topbar.js"></script>
+	<script src="javascripts/foundation/jquery.placeholder.js"></script>
+	
+	
+  <!-- Application Javascript, safe to override -->
+  <script src="javascripts/foundation/app.js"></script>
+	<script src="javascripts/jquery.menu.js"></script>
+	<script src="javascripts/jquery-ui-1.8.20.custom.min.js"></script>
+  <script src="javascripts/base.js"></script>
+</body>
+</html>

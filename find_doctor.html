@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<!--
+  The woods are lovely, dark, and deep,
+  But I have promises to keep,
+  And miles to go before I sleep,
+  And miles to go before I sleep.
+  ~ Robert Frost
+-->
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>HealthOS - Find a Doctor</title>
+
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="stylesheets/general_foundicons.css">
+  <link rel="stylesheet" href="stylesheets/base.css">
+
+
+  <link rel="stylesheet" href="stylesheets/piemenu.css">
+  <script src="javascripts/foundation/modernizr.foundation.js"></script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <!-- Header and Nav -->
+  <header id="header" class="fixed contain-to-grid">
+    <nav class="top-bar">
+
+      <ul>
+        <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>HealthOS</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+      <section>
+        <ul class="left">
+          <li class="divider"></li>
+        </ul>
+
+        <ul class="right">
+          <!-- <li class="divider"></li>
+          <li class="search">
+            <form class="collapse">
+              <input type="text" placeholder="eg: Diabetes">
+              <button type="submit" class="secondary radius button">Search</button>
+            </form>
+          </li> -->
+
+          <li class="divider"></li>
+          <li><a href="#">Questions</a></li>
+          
+          <li class="divider"></li>
+          <li class="active"><a href="#">Doctors</a></li>
+          
+          <li class="divider"></li>
+          <li><a href="#">Appointments</a></li>
+
+          <li class="divider"></li>
+          <li><a href="#">Healthline</a></li>
+
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#"><img src="http://placehold.it/20x20&text=[img]" /> Hi Nikhil</a>
+
+            <ul class="dropdown">
+              <li><label>Profile</label></li>
+              <li class="divider"></li>
+              <li><a href="#">View Profile</a></li>
+              <li><a href="#">Edit Profile</a></li>
+
+              <li class="divider"></li>
+              <li><label>Health Meter</li>
+              <li><div class="round progress success"><span class="meter"></span></div></li> 
+
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+
+          </li>
+
+        </ul>
+      </section>
+    </nav>
+  </header>
+  
+  <!-- End Header and Nav -->
+
+  <!-- Ask Question -->
+  <section class="jumbotron">
+    <div class="row find_main">
+      <div class="four columns">
+        <h2><span class="foundicon-location"></span>Find a doctor</h2>
+      </div>
+
+      <div class="eight columns find_doctor_field">
+        <div class="row">
+          <div class="ten columns">
+            <div class="six columns">
+              <input type="text" placeholder="City" />
+            </div>
+            <div class="three columns">
+              <input type="text" placeholder="State" />
+            </div>
+            <div class="three columns">
+              <input type="text" placeholder="ZIP" />
+            </div>
+          </div>
+          <div class="two columns">
+            <input type="submit" class="button radius" value="Find" />
+          </div>
+        </div>
+
+      </div><!--eight_columns-->
+    </div><!--row-->
+  </section>
+
+
+  
+  
+  <div class="row" id="content">    
+    
+    <!-- Main Feed -->
+
+    <div class="five columns">
+
+      
+      
+      <!-- Feed Entry -->
+      <div class="row feed_entry doctor_list">
+        <div class="row ">
+          <div class="three columns">
+            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+          </div>
+
+          <div class="nine columns">
+            <a href="#"><h3 class="doctor_name">Dr. Rashmi Sama</h3></a>
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+          </div>
+        </div><!--row-->
+
+         <div class="row meta bottom">
+          <div class="eight columns">
+            <ul class="link-list about_doctor">
+              <li><span class="foundicon-graph icon"></span><strong>Endocrinology</strong></li>
+              <li><span class="foundicon-location icon"></span><strong>Hauz Khas</strong></li>
+            </ul>
+          </div>
+
+          <div class="thank_container four columns">
+            <button class="button tiny">Follow</button>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- End Feed Entry -->
+
+      <!-- Feed Entry -->
+      <div class="row feed_entry doctor_list">
+        <div class="row ">
+          <div class="three columns">
+            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+          </div>
+
+          <div class="nine columns">
+            <a href="#"><h3 class="doctor_name">Dr. Luis Villaplana</h3></a>
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+          </div>
+        </div><!--row-->
+
+         <div class="row meta bottom">
+          <div class="eight columns">
+            <ul class="link-list about_doctor">
+              <li><span class="foundicon-graph icon"></span><strong>Family Medicine</strong></li>
+              <li><span class="foundicon-location icon"></span><strong>Green Park</strong></li>
+            </ul>
+          </div>
+
+          <div class="thank_container four columns">
+            <button class="button tiny">Follow</button>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- End Feed Entry -->
+
+      <!-- Feed Entry -->
+      <div class="row feed_entry doctor_list">
+        <div class="row ">
+          <div class="three columns">
+            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
+          </div>
+
+          <div class="nine columns">
+            <a href="#"><h3 class="doctor_name">Dr. Carol Cheney</h3></a>
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+          </div>
+        </div><!--row-->
+
+         <div class="row meta bottom">
+          <div class="eight columns">
+            <ul class="link-list about_doctor">
+              <li><span class="foundicon-graph icon"></span><strong>Ophthalmology</strong></li>
+              <li><span class="foundicon-location icon"></span><strong>Hauz Khas</strong></li>
+            </ul>
+          </div>
+
+          <div class="thank_container four columns">
+            <button class="button tiny">Follow</button>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- End Feed Entry -->
+
+ 
+    </div><!--eight columns-->
+    
+    
+    <!-- Nav Sidebar -->
+    <!-- <div class="nav_sidebar three columns pull-six">
+      <div class="panel">
+      
+        <dl class="vertical tabs">
+          <dd class="active"><a href="#">Your Questions</a></dd>
+          <dd><a href="#">News Feed</a></dd>
+          <dd>
+            <a href="#">Healthline</a>
+          </dd>
+          <dd><a href="#">Questions</a></dd>
+          <dd><a href="#">Doctors</a></dd>
+          <dd><a href="#">Appointments</a></dd>
+        </dl>
+        
+      </div>
+
+
+      <div class="panel">
+        <a href="#" class="th profile_image_holder">
+          <img src="http://placehold.it/300x240&text=[img]" />
+          <span href="#" class="tiny button edit_link">Edit profile</span>
+        </a>
+
+        <h5 class="health_profile_header">Health profile: <strong>50% complete</strong></h5>
+        <div class="round progress success"><span class="meter"></span></div>
+      </div>
+
+      
+    </div> -->
+    
+    
+    <!-- Right Sidebar -->
+    <aside class="seven columns">
+      <div class="panel maps">
+        <div class="flex-video">
+          <iframe width="700" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 1px solid #bbb;" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=sama+healthcare&amp;ie=UTF8&amp;hq=sama+healthcare&amp;hnear=New+Delhi,+Delhi&amp;ll=28.554605,77.227202&amp;spn=0.177547,0.006295&amp;t=m&amp;output=embed"></iframe>
+        </div>
+      </div><!--panel-->
+
+    </aside>
+    
+  </div>
+    
+  
+  <!-- Footer -->
+  
+  <footer>
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="five columns">
+          <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
+        </div>
+        <div class="seven columns">
+          <ul class="link-list right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <script src="javascripts/foundation/jquery.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.accordion.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.alerts.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.buttons.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.forms.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.navigation.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.orbit.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.reveal.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.tabs.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.tooltips.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.topbar.js"></script>
+  <script src="javascripts/foundation/jquery.placeholder.js"></script>
+  
+  
+  <!-- Application Javascript, safe to override -->
+  <script src="javascripts/foundation/app.js"></script>
+  <script src="javascripts/jquery.menu.js"></script>
+  <script src="javascripts/jquery-ui-1.8.20.custom.min.js"></script>
+  <script src="javascripts/base.js"></script>
+</body>
+</html>
