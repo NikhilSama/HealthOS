@@ -1,266 +1,177 @@
-/* line 63, ../sass/base.scss */
 body {
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
-/* line 67, ../sass/base.scss */
 a:hover {
-  color: #4c4cc2;
-}
+  color: #319bfc; }
 
-/* line 71, ../sass/base.scss */
 a:active {
-  color: #2b2b7d;
-}
+  color: #0267c5; }
 
-/* line 76, ../sass/base.scss */
 header#header span.foundicon-plus {
   padding-right: 10px;
-  font-size: 15px;
-}
+  font-size: 15px; }
 
-/* line 82, ../sass/base.scss */
 section.jumbotron {
   margin-top: 60px;
-  padding: 10px 0;
-  background: #f9fbfd;
-  border-bottom: 1px solid #e1ecf7;
-}
-/* line 88, ../sass/base.scss */
-section.jumbotron div.ask_main h2, section.jumbotron div.find_main h2 {
-  font-size: 30px;
-  color: #3838a3;
-}
-/* line 90, ../sass/base.scss */
-section.jumbotron div.ask_main h2 span.foundicon-search, section.jumbotron div.find_main h2 span.foundicon-search {
-  padding-right: 10px;
-  position: relative;
-  top: 8px;
-}
-/* line 98, ../sass/base.scss */
-section.jumbotron div.ask_main .row.collapse, section.jumbotron div.find_main .row.collapse {
-  margin-top: 15px;
-}
-/* line 100, ../sass/base.scss */
-section.jumbotron div.ask_main .row.collapse input.ask, section.jumbotron div.ask_main .row.collapse a.button, section.jumbotron div.find_main .row.collapse input.ask, section.jumbotron div.find_main .row.collapse a.button {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  font-size: 22px;
-}
-/* line 106, ../sass/base.scss */
-section.jumbotron div.ask_main .row.collapse a.button, section.jumbotron div.find_main .row.collapse a.button {
-  line-height: 0;
-}
-/* line 113, ../sass/base.scss */
-section.jumbotron div.find_main h2 {
-  position: relative;
-  top: -5px;
-}
-/* line 116, ../sass/base.scss */
-section.jumbotron div.find_main h2 span.foundicon-location {
-  position: relative;
-  top: 5px;
-}
-/* line 123, ../sass/base.scss */
-section.jumbotron .find_doctor_field {
-  margin-top: 15px;
-}
-/* line 126, ../sass/base.scss */
-section.jumbotron .find_doctor_field .button.radius {
-  padding: 8px 20px 9px;
-}
+  padding: 10px 0; }
+  section.jumbotron div.ask_main h2, section.jumbotron div.find_main h2 {
+    font-size: 30px;
+    color: #5b5b5c; }
+    section.jumbotron div.ask_main h2 span.foundicon-search, section.jumbotron div.find_main h2 span.foundicon-search {
+      padding-right: 10px;
+      position: relative;
+      top: 8px; }
+  section.jumbotron div.ask_main .row.collapse, section.jumbotron div.find_main .row.collapse {
+    margin-top: 15px; }
+    section.jumbotron div.ask_main .row.collapse input.ask, section.jumbotron div.ask_main .row.collapse a.button, section.jumbotron div.find_main .row.collapse input.ask, section.jumbotron div.find_main .row.collapse a.button {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-size: 22px; }
+    section.jumbotron div.ask_main .row.collapse a.button, section.jumbotron div.find_main .row.collapse a.button {
+      line-height: 0; }
+  section.jumbotron div.find_main h2 {
+    position: relative;
+    top: -5px; }
+    section.jumbotron div.find_main h2 span.foundicon-location {
+      position: relative;
+      top: 5px; }
+  section.jumbotron .find_doctor_field {
+    margin-top: 15px; }
+    section.jumbotron .find_doctor_field .button.radius {
+      padding: 8px 20px 9px; }
 
-/* line 134, ../sass/base.scss */
 .top-bar ul li .round.progress.success {
   width: 80%;
   margin-left: 10%;
-  height: 12px;
-}
+  height: 12px; }
 
-/* line 140, ../sass/base.scss */
 .top-bar ul > li.search form {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
-/* line 144, ../sass/base.scss */
 .top-bar ul > li.search form input[type="text"] {
   width: 64%;
-  padding: 0 5px;
-}
+  padding: 0 5px; }
 
-/* line 148, ../sass/base.scss */
 .top-bar ul > li.search form input[type="text"] + .button {
-  padding: 7px 12px 7px;
-}
+  padding: 7px 12px 7px; }
 
-/* line 159, ../sass/base.scss */
 #content {
-  margin-top: 30px;
-}
-/* line 163, ../sass/base.scss */
-#content .feed_entry {
-  padding: 20px;
-  border: 1px solid #f1f1f1;
-  border-top: 4px solid #cddff1;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-/* line 169, ../sass/base.scss */
-#content .feed_entry .meta {
-  background: #f8f8f8;
-  margin-left: -20px;
-  width: 110%;
-  padding-top: 10px;
-  height: 45px;
-}
-/* line 175, ../sass/base.scss */
-#content .feed_entry .meta.top {
-  margin-top: -20px;
-}
-/* line 179, ../sass/base.scss */
-#content .feed_entry .meta.bottom {
-  position: relative;
-  top: 20px;
-  height: 52px;
-  background: #cddff1;
-}
-/* line 184, ../sass/base.scss */
-#content .feed_entry .meta.bottom button.button {
-  margin-right: 30px;
-  padding: 5px 18px 6px;
-  font-size: 14px;
-}
-/* line 188, ../sass/base.scss */
-#content .feed_entry .meta.bottom button.button span.foundicon-checkmark {
-  padding-right: 10px;
-  position: relative;
-  top: 2px;
-}
-/* line 195, ../sass/base.scss */
-#content .feed_entry .meta img {
-  padding-right: 10px;
-  padding-top: 0;
-  display: block;
-  float: left;
-  margin-top: 4px;
-}
-/* line 203, ../sass/base.scss */
-#content .feed_entry .meta p.time {
-  color: #919191;
-  font-style: italic;
-  font-size: 12px;
-  text-align: right;
-  padding-right: 10px;
-  margin-top: 4px;
-}
-/* line 212, ../sass/base.scss */
-#content .feed_entry .question {
-  margin-top: 0px;
-}
-/* line 214, ../sass/base.scss */
-#content .feed_entry .question h3 {
-  margin: 0;
-}
-/* line 217, ../sass/base.scss */
-#content .feed_entry .question a:hover h3 {
-  color: #3838a3;
-}
-/* line 220, ../sass/base.scss */
-#content .feed_entry .question a:active h3 {
-  color: #2b2b7d;
-}
-/* line 225, ../sass/base.scss */
-#content .feed_entry .answer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-/* line 231, ../sass/base.scss */
-#content .feed_entry.doctor_list h3.doctor_name {
-  margin-top: 0;
-}
-/* line 234, ../sass/base.scss */
-#content .feed_entry.doctor_list .icon {
-  position: relative;
-  left: -2px;
-  top: 2px;
-}
-/* line 239, ../sass/base.scss */
-#content .feed_entry.doctor_list .meta.bottom {
-  width: 120%;
-  height: 55px;
-}
-/* line 244, ../sass/base.scss */
-#content .feed_entry.doctor_list .about_doctor li {
-  font-size: 14px;
-  padding-top: 5px;
-}
-/* line 253, ../sass/base.scss */
-#content .nav_sidebar .health_profile_header {
-  font-size: 14px;
-  color: #585858;
-}
-/* line 256, ../sass/base.scss */
-#content .nav_sidebar .health_profile_header strong {
-  color: #323232;
-}
-/* line 261, ../sass/base.scss */
-#content .nav_sidebar dl.tabs.vertical dd.active a {
-  background: #3772AC;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
-}
-/* line 266, ../sass/base.scss */
-#content .nav_sidebar dl.tabs.vertical dd a:hover {
-  background: #d8d8d8;
-}
-/* line 270, ../sass/base.scss */
-#content .nav_sidebar dl.tabs.vertical dd.active a:hover {
-  background: #3772AC;
-}
-/* line 274, ../sass/base.scss */
-#content .nav_sidebar dl.tabs.vertical dd.active {
-  border-left-color: #2B5885;
-  border-top-color: #2B5885;
-}
-/* line 279, ../sass/base.scss */
-#content .nav_sidebar .profile_image_holder {
-  margin-bottom: 20px;
-  position: relative;
-}
-/* line 283, ../sass/base.scss */
-#content .nav_sidebar .profile_image_holder .button.edit_link {
-  position: absolute;
-  top: 85px;
-  left: 70px;
-  display: none;
-}
-/* line 290, ../sass/base.scss */
-#content .nav_sidebar .profile_image_holder:hover .edit_link {
-  display: block;
-}
-/* line 296, ../sass/base.scss */
-#content .recommended_topics {
-  overflow: hidden;
-}
-/* line 298, ../sass/base.scss */
-#content .recommended_topics h3 {
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-top: -20px;
-  margin-left: -20px;
-  width: 124%;
-  padding: 10px;
-  background: #ababab;
-}
-/* line 308, ../sass/base.scss */
-#content .recommended_topics ul {
-  padding: 5px;
-}
-/* line 310, ../sass/base.scss */
-#content .recommended_topics ul li {
-  padding: 10px  0px !important;
-  border-top: 1px solid #e4e4e4;
-}
-/* line 313, ../sass/base.scss */
-#content .recommended_topics ul li:hover {
-  border-color: #d7d7d7;
-}
+  margin-top: 30px; }
+  #content .feed_entry:hover {
+    color: #282829; }
+  #content .feed_entry {
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    border-top: 4px solid #73aef7;
+    overflow: hidden;
+    margin-bottom: 30px; }
+    #content .feed_entry:hover {
+      border-top: 4px solid #0382f7; }
+      #content .feed_entry:hover .meta.bottom {
+        background: #0382f7; }
+      #content .feed_entry:hover .question.h3 {
+        color: black; }
+    #content .feed_entry .meta {
+      background: #f8f8f8;
+      margin-left: -20px;
+      width: 110%;
+      padding-top: 10px;
+      height: 45px; }
+      #content .feed_entry .meta.top {
+        margin-top: -20px; }
+      #content .feed_entry .meta.bottom {
+        position: relative;
+        top: 20px;
+        height: 52px;
+        background: #73aef7; }
+        #content .feed_entry .meta.bottom button.button {
+          margin-right: 30px;
+          padding: 5px 18px 6px;
+          font-size: 14px; }
+          #content .feed_entry .meta.bottom button.button span.foundicon-checkmark {
+            padding-right: 10px;
+            position: relative;
+            top: 2px; }
+      #content .feed_entry .meta img {
+        padding-right: 10px;
+        padding-top: 0;
+        display: block;
+        float: left;
+        margin-top: 4px; }
+      #content .feed_entry .meta p.time {
+        color: #282829;
+        font-style: italic;
+        font-size: 12px;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 4px; }
+    #content .feed_entry .question {
+      margin-top: 0px; }
+      #content .feed_entry .question h3 {
+        margin: 0; }
+      #content .feed_entry .question a:hover h3 {
+        color: #282829; }
+      #content .feed_entry .question a:active h3 {
+        color: #0267c5; }
+    #content .feed_entry .answer {
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    #content .feed_entry.doctor_list h3.doctor_name {
+      margin-top: 0; }
+    #content .feed_entry.doctor_list .icon {
+      position: relative;
+      left: -2px;
+      top: 2px; }
+    #content .feed_entry.doctor_list .meta.bottom {
+      width: 120%;
+      height: 55px; }
+    #content .feed_entry.doctor_list .about_doctor li {
+      font-size: 14px;
+      padding-top: 5px; }
+  #content .nav_sidebar .health_profile_header {
+    font-size: 14px;
+    color: #585858; }
+    #content .nav_sidebar .health_profile_header strong {
+      color: #323232; }
+  #content .nav_sidebar dl.tabs.vertical dd.active a {
+    background: #3772AC;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7); }
+  #content .nav_sidebar dl.tabs.vertical dd a:hover {
+    background: #d8d8d8; }
+  #content .nav_sidebar dl.tabs.vertical dd.active a:hover {
+    background: #3772AC; }
+  #content .nav_sidebar dl.tabs.vertical dd.active {
+    border-left-color: #2B5885;
+    border-top-color: #2B5885; }
+  #content .nav_sidebar .profile_image_holder {
+    margin-bottom: 20px;
+    position: relative; }
+    #content .nav_sidebar .profile_image_holder .button.edit_link {
+      position: absolute;
+      top: 85px;
+      left: 70px;
+      display: none; }
+    #content .nav_sidebar .profile_image_holder:hover .edit_link {
+      display: block; }
+  #content .recommended_topics {
+    overflow: hidden; }
+    #content .recommended_topics h3 {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-top: -20px;
+      margin-left: -20px;
+      width: 124%;
+      padding: 10px;
+      background: #4392f4; }
+    #content .recommended_topics:hover {
+      background: #FFF; }
+      #content .recommended_topics:hover h3 {
+        background: #0382f7;
+        color: #FFF; }
+    #content .recommended_topics ul {
+      padding: 5px; }
+      #content .recommended_topics ul li {
+        padding: 10px  0px !important;
+        border-top: 1px solid #e4e4e4; }
+        #content .recommended_topics ul li:hover {
+          border-color: #d7d7d7; }

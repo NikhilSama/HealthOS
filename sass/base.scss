@@ -19,9 +19,9 @@
 
 $light_gray: #f8f8f8;
 $medium_gray: #f1f1f1;
-$dark_gray: #c4c4c4;
-$light_blue: #cddff1;
-$dark_blue: #3838A3;
+$dark_gray: #5B5B5C;
+$light_blue: #73AEF7;
+$dark_blue: #0382F7;
 
 @mixin rounded($radius: 3px) {
   -moz-border-radius: $radius;
@@ -63,7 +63,6 @@ $dark_blue: #3838A3;
 body {
   overflow-x: hidden;
 }
-
 a:hover {
   color: lighten($dark_blue, 10%);
 }
@@ -82,8 +81,6 @@ header#header {
 section.jumbotron {
   margin-top: 60px;
   padding: 10px 0;
-  background: lighten($light_blue, 11%);
-  border-bottom: 1px solid lighten($light_blue, 5%);
   div.ask_main, div.find_main {
     h2 {
       font-size: 30px;
@@ -92,7 +89,7 @@ section.jumbotron {
         position: relative;
         top: 8px;
       }
-      color: $dark_blue;
+      color: $dark_gray;
     }
 
     .row.collapse {
@@ -158,12 +155,24 @@ section.jumbotron {
 
 #content {
   margin-top: 30px;
+  
+  .feed_entry:hover {
+            color: darken($dark_gray, 20%);
 
-
+  }
   .feed_entry {
     padding: 20px;
     border: 1px solid $medium_gray;
     border-top: 4px solid $light_blue;
+    &:hover {
+      border-top: 4px solid $dark_blue;
+      .meta.bottom {
+        background: $dark_blue;
+      }
+      .question.h3 {
+        color: darken($dark_gray, 50%);
+      }
+    }
     overflow: hidden;
     margin-bottom: 30px;
     .meta {
@@ -215,7 +224,7 @@ section.jumbotron {
         margin: 0;
       }
       a:hover h3 {
-        color: $dark_blue;
+        color: darken($dark_gray, 20%);
       }
       a:active h3 {
         color: darken($dark_blue, 10%);
@@ -302,7 +311,14 @@ section.jumbotron {
       margin-left: -20px;
       width: 124%;
       padding: 10px;
-      background: darken($dark_gray, 10%);
+      background: darken($light_blue, 10%);
+    }
+    &:hover {
+      h3 {
+        background: $dark_blue;
+        color: #FFF;
+      }
+      background: #FFF;
     }
 
     ul {
