@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
   $(document).foundationTopBar();
+  $(document).foundationCustomForms();
   for(var i=1; i <= 4; i++) {
     $('.share_options_' + i).PieMenu({
       'starting_angel':0,
@@ -7,6 +8,12 @@ jQuery(document).ready(function($) {
       'radius':100,
     });
   }
+
+
+
+  
+  
+
 
 });
 

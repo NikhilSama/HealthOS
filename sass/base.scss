@@ -359,6 +359,29 @@ section.jumbotron {
 
 
 
+// ---------------------------------------
+// Doctor Profile
+// ---------------------------------------
+
+.healthline {
+  .dates {
+    border-right: 5px solid $medium_gray;
+  }
+
+  .dates_wrap:hover {
+    .dates {
+      border-color: darken($medium_gray, 10%);
+    }
+  }
+
+  fieldset {
+    padding-bottom: 15px;
+  }
+
+  .health_timeline_header {
+    font-weight: bold !important;
+  }
+}
 
 
 

@@ -307,3 +307,20 @@ section.jumbotron .find_doctor_field .button.radius {
   top: 3px;
   left: -5px;
 }
+
+/* line 367, ../sass/base.scss */
+.healthline .dates {
+  border-right: 5px solid #f1f1f1;
+}
+/* line 372, ../sass/base.scss */
+.healthline .dates_wrap:hover .dates {
+  border-color: #d7d7d7;
+}
+/* line 377, ../sass/base.scss */
+.healthline fieldset {
+  padding-bottom: 15px;
+}
+/* line 381, ../sass/base.scss */
+.healthline .health_timeline_header {
+  font-weight: bold !important;
+}

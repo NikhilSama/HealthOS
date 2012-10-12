@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<!--
+  The woods are lovely, dark, and deep,
+  But I have promises to keep,
+  And miles to go before I sleep,
+  And miles to go before I sleep.
+  ~ Robert Frost
+-->
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>HealthOS - Healthline</title>
+
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="stylesheets/general_foundicons.css">
+  <link rel="stylesheet" href="stylesheets/base.css">
+
+
+  <link rel="stylesheet" href="stylesheets/piemenu.css">
+  <script src="javascripts/foundation/modernizr.foundation.js"></script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <!-- Header and Nav -->
+  <header id="header" class="fixed contain-to-grid">
+    <nav class="top-bar">
+
+      <ul>
+        <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>HealthOS</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+      <section>
+        <ul class="left">
+          <li class="divider"></li>
+        </ul>
+
+        <ul class="right">
+          <!-- <li class="divider"></li>
+          <li class="search">
+            <form class="collapse">
+              <input type="text" placeholder="eg: Diabetes">
+              <button type="submit" class="secondary radius button">Search</button>
+            </form>
+          </li> -->
+
+          <li class="divider"></li>
+          <li><a href="#">Questions</a></li>
+          
+          <li class="divider"></li>
+          <li><a href="#">Doctors</a></li>
+          
+          <li class="divider"></li>
+          <li><a href="#">Appointments</a></li>
+
+          <li class="divider"></li>
+          <li class="active"><a href="#">Healthline</a></li>
+
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a href="#"><img src="http://placehold.it/20x20&text=[img]" /> Hi Nikhil</a>
+
+            <ul class="dropdown">
+              <li><label>Profile</label></li>
+              <li class="divider"></li>
+              <li><a href="#">View Profile</a></li>
+              <li><a href="#">Edit Profile</a></li>
+
+              <li class="divider"></li>
+              <li><label>Health Meter</li>
+              <li><div class="round progress success"><span class="meter"></span></div></li> 
+
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+
+          </li>
+
+        </ul>
+      </section>
+    </nav>
+  </header>
+  
+  <!-- End Header and Nav -->
+
+
+  
+  
+  <div class="row doctor_profile" id="content">
+
+
+    <section class="row doctor_profile_headshot">
+      <div class="image_wrapper two columns">
+        <span href="#" class="th"><img src="http://placehold.it/200x200&text=[img]" /></span>
+      </div>
+
+      <div class="ten columns">  
+        <h2>Nikhil Sama</h2>
+        <h4 class="subheader">Complete to boost your HealthScore.</h4>
+      </div>
+    </section> 
+
+    <hr>
+
+    <section class="healthline">
+      <div class="five columns">
+        <div class="row">
+          <h3 class="subheader health_timeline_header">Health Timeline</h3>
+        </div>
+        <div class="row dates_wrap">
+          <div class="five columns dates">
+            <h3 class="subheader">March 2012</h3>
+          </div><!--five columns dated-->
+
+          <div class="seven columns disease">
+            <h3><a href="#">TB Diagnosed</a></h3>
+          </div><!--disease-->
+        </div><!--row-->
+
+        <div class="row dates_wrap">
+          <div class="five columns dates">
+            <h3 class="subheader">December 2011</h3>
+          </div><!--five columns dated-->
+
+          <div class="seven columns disease">
+            <h3><a href="#">Blood Test</a></h3>
+          </div><!--disease-->
+        </div><!--row-->
+
+        <div class="row dates_wrap">
+          <div class="five columns dates">
+            <h3 class="subheader">January 2010</h3>
+          </div><!--five columns dated-->
+
+          <div class="seven columns disease">
+            <h3><a href="#">Delivered baby</a></h3>
+          </div><!--disease-->
+        </div><!--row-->
+        
+      </div><!--five columns-->
+
+      <div class="seven columns">
+        
+
+        <dl class="tabs contained">
+          <dd class="active"><a href="#simple1">About</a></dd>
+          <dd><a href="#simple2">Contact</a></dd>
+          <dd><a href="#simple3">Medications</a></dd>
+          <dd><a href="#simple4">Immunization</a></dd>
+        </dl>
+
+        <ul class="tabs-content contained">
+          <li class="active" id="simple1Tab">
+            <form>
+            <fieldset>
+              <legend>Personal Details</legend>
+
+              <div class="row">
+                <div class="twelve columns">
+
+                  <label>Name</label>
+                  <input type="text">
+
+                  <label>Email</label>
+                  <input type="email">
+
+                  <label>Occupation</label>
+                  <input type="text">
+
+
+                  <label>Height</label>
+                  <div class="row">
+                    <div class="six columns">
+                      <div class="row collapse">
+                        <div class="eight mobile-three columns">
+                          <input type="text" />
+                        </div>
+                        <div class="four mobile-one columns">
+                          <span class="postfix">metres</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="six columns">
+                      <div class="row collapse">
+                        <div class="eight mobile-three columns">
+                          <input type="text" />
+                        </div>
+                        <div class="four mobile-one columns">
+                          <span class="postfix">inches</span>
+                        </div>
+                      </div>
+                    </div>         
+                  </div>
+
+
+                  <div class="row">
+                    <div class="six columns">
+                      <label>Weight</label>
+                      <div class="row collapse">
+                        <div class="eight mobile-three columns">
+                          <input type="text" />
+                        </div>
+                        <div class="four mobile-one columns">
+                          <span class="postfix">kgs</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="six columns">
+                      <label>Blood Type</label>
+                      <input type="text">        
+                  </div>
+
+
+                </div>
+
+                  <label class="four columns">Gender </label>
+                  <label for="radio1"  class="four columns">
+                    <input name="radio1" type="radio" id="radio1" >
+                    Male
+                  </label>
+
+                  <label for="radio2" class="four columns">
+                    <input name="radio1" type="radio" id="radio2">
+                    Female
+                  </label>
+
+            </fieldset>
+          </form>
+          </li>
+          
+          <li id="simple2Tab">
+            <form>
+            <fieldset>
+              <legend>Personal Details</legend>
+                  <label>Phone Number</label>
+                  <input type="number">
+
+
+                <label>Address</label>
+                  <input placeholder="Street (e.g. 123 Awesome St.)" type="text">
+
+                  <div class="row">
+                    <div class="six columns">
+                      <input placeholder="City" type="text">
+                    </div>
+                    <div class="two columns">
+                      <select>
+                        <option>CA</option>
+                      </select>
+                    </div>
+                    <div class="four columns">
+                      <input placeholder="ZIP" type="text">
+                    </div>
+                  </div>
+              </fieldset>
+
+            <fieldset>
+              <legend>Emergency Contact</legend>
+                  <label>Name</label>
+                  <input type="text">
+
+                  <label>Email</label>
+                  <input type="email">
+
+                  <label>Phone Number</label>
+                  <input type="number">
+
+                  <label>Address</label>
+                  <input placeholder="Street (e.g. 123 Awesome St.)" type="text">
+
+                  <div class="row">
+                    <div class="six columns">
+                      <input placeholder="City" type="text">
+                    </div>
+                    <div class="two columns">
+                      <select>
+                        <option>CA</option>
+                      </select>
+                    </div>
+                    <div class="four columns">
+                      <input placeholder="ZIP" type="text">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+
+
+
+
+          </li>
+          <li id="simple3Tab">
+            <form>
+            <fieldset>
+              <legend>Medications</legend>
+              
+              <label>Name of medication</label>
+              <input type="text">
+
+              <label>Notes</label>
+              <textarea></textarea>
+
+              <label>
+                <input type="checkbox">
+                Currently not using this medication
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Allergies</legend>
+              
+              <label>Name of allergy</label>
+              <input type="text">
+
+              <label>Notes</label>
+              <textarea></textarea>
+            </fieldset>
+          </form>
+
+
+          </li>
+          <li id="simple4Tab">
+             <form>
+              <fieldset>
+                <legend>Immunizations</legend>
+                
+                <label>Name of vaccine</label>
+                <input type="text">
+
+                <label>Notes</label>
+                <textarea></textarea>
+
+                <label>Date administered</label>
+                <div class="row">
+                  <div class="four columns">
+                    <label>Date</label>
+
+                    <select>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+
+                  <div class="four columns">
+                    <label>Month</label>
+
+                    <select>
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                    </select>
+                  </div>
+
+                  <div class="four columns">
+                    <label>Year</label>
+
+                    <select>
+                      <option>2007</option>
+                      <option>2008</option>
+                      <option>2009</option>
+                      <option>2010</option>
+                      <option>2011</option>
+                      <option>2012</option>
+                    </select>
+                  </div>
+                </div>
+
+              </fieldset>
+            </form>
+
+          </li>
+        </ul>
+
+
+      </div><!--seven columns-->
+    </section>
+    
+
+    
+  </div>
+    
+  
+  <!-- Footer -->
+  
+  <footer>
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="five columns">
+          <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
+        </div>
+        <div class="seven columns">
+          <ul class="link-list right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <script src="javascripts/foundation/jquery.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.accordion.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.alerts.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.buttons.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.forms.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.navigation.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.orbit.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.reveal.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.tabs.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.tooltips.js"></script>
+  <script src="javascripts/foundation/jquery.foundation.topbar.js"></script>
+  <script src="javascripts/foundation/jquery.placeholder.js"></script>
+  
+  
+  <!-- Application Javascript, safe to override -->
+  <script src="javascripts/foundation/app.js"></script>
+  <script src="javascripts/jquery.menu.js"></script>
+  <script src="javascripts/jquery-ui-1.8.20.custom.min.js"></script>
+  <script src="javascripts/base.js"></script>
+</body>
+</html>
