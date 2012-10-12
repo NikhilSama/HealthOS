@@ -311,7 +311,7 @@ section.jumbotron {
       margin-left: -20px;
       width: 124%;
       padding: 10px;
-      background: darken($light_blue, 10%);
+      background: $light_blue;
     }
     &:hover {
       h3 {
