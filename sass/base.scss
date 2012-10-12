@@ -126,7 +126,9 @@ section.jumbotron {
   }
 }
 
-
+#header {
+  z-index: 9999;
+}
 
 .top-bar ul li .round.progress.success {
   width: 80%;
@@ -333,6 +335,28 @@ section.jumbotron {
     }
   }
 }
+
+
+
+// ---------------------------------------
+// Doctor Profile
+// ---------------------------------------
+
+.doctor_profile {
+  margin-top: 80px !important;
+
+  .feed_entry {
+    padding-top: 5px !important;
+  }
+
+  table tr i {
+    position: relative;
+    top: 3px;
+    left: -5px;
+  }
+
+}
+
 
 
 

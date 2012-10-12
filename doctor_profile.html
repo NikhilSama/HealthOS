@@ -17,7 +17,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
 
-  <title>HealthOS - Find a Doctor</title>
+  <title>HealthOS - Doctor Profile</title>
 
   <link rel="stylesheet" href="stylesheets/app.css">
   <link rel="stylesheet" href="stylesheets/general_foundicons.css">
@@ -96,136 +96,124 @@
   
   <!-- End Header and Nav -->
 
-  <!-- Ask Question -->
-  <section class="jumbotron">
-    <div class="row find_main">
-      <div class="four columns">
-        <h2><span class="foundicon-location"></span>Find a doctor</h2>
+
+  
+  
+  <div class="row doctor_profile" id="content">
+
+
+    <section class="row doctor_profile_headshot">
+      <div class="image_wrapper two columns">
+        <span href="#" class="th"><img src="http://placehold.it/200x200&text=[img]" /></span>
       </div>
 
-      <div class="eight columns find_doctor_field">
-        <div class="row">
-          <div class="ten columns">
-            <div class="eight columns">
-              <input type="text" placeholder="Specialization" />
-            </div>
-            <div class="four columns">
-              <input type="text" placeholder="ZIP" />
-            </div>
-          </div>
-          <div class="two columns">
-            <input type="submit" class="button radius" value="Find" />
-          </div>
-        </div>
+      <div class="ten columns">  
+        <h2>Dr. Rashmi Sama</h2>
+        <h4 class="subheader">Lorem Ipsum is simply dummy text of the printing industry.</h4>
+      </div>
+    </section> 
 
-      </div><!--eight_columns-->
-    </div><!--row-->
-  </section>
-
-
-  
-  
-  <div class="row" id="content">    
+    <hr>
     
     <!-- Main Feed -->
-
-    <div class="five columns">
-
-      
-      
-      <!-- Feed Entry -->
-      <div class="row feed_entry doctor_list">
-        <div class="row ">
-          <div class="three columns">
-            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
-          </div>
-
-          <div class="nine columns">
-            <a href="#"><h3 class="doctor_name">Dr. Rashmi Sama</h3></a>
-            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-          </div>
-        </div><!--row-->
-
-         <div class="row meta bottom">
-          <div class="eight columns">
-            <ul class="link-list about_doctor">
-              <li><span class="foundicon-graph icon"></span><strong>Endocrinology</strong></li>
-              <li><span class="foundicon-location icon"></span><strong>Hauz Khas</strong></li>
-            </ul>
-          </div>
-
-          <div class="thank_container four columns">
-            <button class="button tiny">Profile</button>
-          </div>
-        </div>
-
-
-      </div>
-      <!-- End Feed Entry -->
-
-      <!-- Feed Entry -->
-      <div class="row feed_entry doctor_list">
-        <div class="row ">
-          <div class="three columns">
-            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
-          </div>
-
-          <div class="nine columns">
-            <a href="#"><h3 class="doctor_name">Dr. Luis Villaplana</h3></a>
-            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-          </div>
-        </div><!--row-->
-
-         <div class="row meta bottom">
-          <div class="eight columns">
-            <ul class="link-list about_doctor">
-              <li><span class="foundicon-graph icon"></span><strong>Family Medicine</strong></li>
-              <li><span class="foundicon-location icon"></span><strong>Green Park</strong></li>
-            </ul>
-          </div>
-
-          <div class="thank_container four columns">
-            <button class="button tiny">Profile</button>
-          </div>
-        </div>
-
-
-      </div>
-      <!-- End Feed Entry -->
-
-      <!-- Feed Entry -->
-      <div class="row feed_entry doctor_list">
-        <div class="row ">
-          <div class="three columns">
-            <a href="#" class="th"><img src="http://placehold.it/300x280&text=[img]" /></a>
-          </div>
-
-          <div class="nine columns">
-            <a href="#"><h3 class="doctor_name">Dr. Carol Cheney</h3></a>
-            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-          </div>
-        </div><!--row-->
-
-         <div class="row meta bottom">
-          <div class="eight columns">
-            <ul class="link-list about_doctor">
-              <li><span class="foundicon-graph icon"></span><strong>Ophthalmology</strong></li>
-              <li><span class="foundicon-location icon"></span><strong>Hauz Khas</strong></li>
-            </ul>
-          </div>
-
-          <div class="thank_container four columns">
-            <button class="button tiny">Profile</button>
-          </div>
-        </div>
-
-
-      </div>
-      <!-- End Feed Entry -->
-
- 
-    </div><!--eight columns-->
+    <section class="row doctor_achievements">
     
+      <div class="six columns">
+        <!-- Feed Entry -->
+        <div class="row feed_entry doctor_list">
+          <h5>Specializations</h5>
+          <p class="subheader">Pulmonology, Internal Medicine</p>
+
+          <hr>
+          <h5>Education and Training</h5>
+          <p class="subheader">MBBS, Kasturba Medical School</p>
+
+        </div><!-- End Feed Entry -->
+      </div><!--six columns-->
+
+      <div class="six columns">
+        <!-- Feed Entry -->
+        <div class="row feed_entry doctor_list">
+          <h5>Certifications</h5>
+          <p class="subheader">US Board Certified in Pulmonology and Critical Care</p>
+
+          <hr>
+          <h5>Awards</h5>
+          <p class="subheader">US Board Certified in Pulmonology and Critical Care</p>
+
+        </div><!-- End Feed Entry -->
+      </div><!--six columns-->
+    </section>
+
+    <section class="doctor_timings row">
+      <div class="seven columns">
+        <div class="row feed_entry doctor_list">
+           <div class="row">   
+            <div class="twelve columns">
+              <h5>Contact</h5>
+
+              <table class="twelve">
+                <tbody>
+                  <tr>
+                    <td>Direct</td>
+                    <td><i class="foundicon-phone"></i>+91 99719 30707</td>
+                    <td><i class="foundicon-mail"></i>drrashmisama@gmail.com</td>
+                  </tr>
+
+                  <tr>
+                    <td>Assistant</td>
+                    <td><i class="foundicon-phone"></i>+91 99719 30707</td>
+                    <td><i class="foundicon-mail"></i>drrashmisama@gmail.com</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div><!--row-->
+          
+          <hr>
+
+          <div class="row">   
+            <div class="twelve columns">
+              <h5>Location and Timings</h5>
+
+              <table class="twelve">
+                <tbody>
+                  <tr>
+                    <td>Mon, Wed, Thursday</td>
+                    <td>5 - 7 pm</td>
+                    <td>Walkin or get appointment online or call 98719 30707</td>
+                    <td>Ganga Ram Hospital, Rajinder Nagar, Delhi 110049</td>
+                  </tr>
+
+                  <tr>
+                    <td>Mon, Wed, Thursday</td>
+                    <td>5 - 7 pm</td>
+                    <td>Walkin or get appointment online or call 98719 30707</td>
+                    <td>Sama Hospital, 8 Siri Fort Road, New Delhi 110017</td>
+                  </tr>
+
+                  
+                </tbody>
+              </table>
+            </div>
+          </div><!--row-->
+
+
+        </div><!--feed_entry-->
+      </div><!--seven columns-->
+   
+      <!-- Right Sidebar -->
+    <aside class="five columns">
+      <div class="panel maps">
+        <div class="flex-video">
+          <iframe width="700" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 1px solid #bbb;" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=sama+healthcare&amp;ie=UTF8&amp;hq=sama+healthcare&amp;hnear=New+Delhi,+Delhi&amp;ll=28.554605,77.227202&amp;spn=0.177547,0.006295&amp;t=m&amp;output=embed"></iframe>
+        </div>
+      </div><!--panel-->
+
+    </aside>
+    </section>
+   
     
     <!-- Nav Sidebar -->
     <!-- <div class="nav_sidebar three columns pull-six">
@@ -259,15 +247,7 @@
     </div> -->
     
     
-    <!-- Right Sidebar -->
-    <aside class="seven columns">
-      <div class="panel maps">
-        <div class="flex-video">
-          <iframe width="700" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border: 1px solid #bbb;" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=sama+healthcare&amp;ie=UTF8&amp;hq=sama+healthcare&amp;hnear=New+Delhi,+Delhi&amp;ll=28.554605,77.227202&amp;spn=0.177547,0.006295&amp;t=m&amp;output=embed"></iframe>
-        </div>
-      </div><!--panel-->
-
-    </aside>
+   
     
   </div>
     
