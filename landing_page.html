@@ -25,7 +25,9 @@
 
 
   <link rel="stylesheet" href="stylesheets/piemenu.css">
-    <link rel="stylesheet" href="stylesheets/elastislide.css">
+  <link rel="stylesheet" href="stylesheets/elastislide.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+
   <script src="javascripts/foundation/modernizr.foundation.js"></script>
 
   <!-- IE Fix for HTML5 Tags -->
@@ -48,7 +50,12 @@
           <h5 class="subheader slogan">Get your question answered by over 15,000 doctors</h5>
           <div class="row collapse">
             <div class="nine mobile-three columns">
-              <input type="text" class="ask" placeholder="Type any health related question" />
+              <!-- <input type="text" class="ask" placeholder="Type any health related question" /> -->
+              <div class="ui-widget">
+                  <select id="combobox">
+                      <option value="">Select one...</option>
+                  </select>
+              </div><!--ui-widget-->
             </div>
             <div class="three mobile-one columns">
               <a href="#" class="postfix button expand">Ask!</a>
@@ -110,6 +117,8 @@
   
   <!-- Footer -->
   
+
+  
   <footer>
     <div class="twelve columns">
       <hr />
@@ -130,6 +139,8 @@
       </div>
     </div> 
   </footer>
+
+  
   
   
   <!-- Included JS Files (Uncompressed) -->
@@ -150,10 +161,11 @@
   
   <!-- Application Javascript, safe to override -->
   <script src="javascripts/foundation/app.js"></script>
-  <script src="javascripts/jquery.menu.js"></script>
-  <script src="javascripts/jquery-ui-1.8.20.custom.min.js"></script>
-  <script src="javascripts/jquery.elastislide.js"></script>
+  <script src="javascripts/vendor/jquery.menu.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+  <script src="javascripts/vendor/jquery.elastislide.js"></script>
   <script src="javascripts/base.js"></script>
+  <script src="javascripts/autocomplete.js"></script>
   <script>
   $('#carousel').elastislide({
         imageW  : 180,

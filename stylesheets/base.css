@@ -372,16 +372,27 @@ section.jumbotron .find_doctor_field .button.radius {
   padding-top: 15px;
 }
 /* line 432, ../sass/base.scss */
-.landing_page .main input {
+.landing_page .main input, .landing_page .main .select_input {
   padding: 20px 10px;
   border-color: #025AAB;
 }
 /* line 437, ../sass/base.scss */
+.landing_page .main .select_input {
+  padding: 10px !important;
+  padding-bottom: 8px !important;
+  background: #f9f9f9 !important;
+  outline: none;
+}
+/* line 442, ../sass/base.scss */
+.landing_page .main .select_input:focus {
+  background: #fff !important;
+}
+/* line 447, ../sass/base.scss */
 .landing_page .main a.button.postfix {
   padding-top: 12px !important;
   padding-bottom: 28px;
 }
-/* line 444, ../sass/base.scss */
+/* line 454, ../sass/base.scss */
 .landing_page .es-carousel-wrapper h1 {
   color: #8e8e8f;
   font-size: 18px;
@@ -389,4 +400,9 @@ section.jumbotron .find_doctor_field .button.radius {
   margin-bottom: 30px;
   background: whitesmoke;
   padding: 10px 0;
+}
+
+/* line 466, ../sass/base.scss */
+.ui-state-error {
+  min-width: 390px;
 }

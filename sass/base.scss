@@ -429,9 +429,19 @@ section.jumbotron {
       font-weight: bold;
       padding-top: 15px;
     }
-    input {
+    input, .select_input {
       padding: 20px 10px;
       border-color: #025AAB;
+    }
+
+    .select_input {
+      padding: 10px !important;
+      padding-bottom: 8px !important;
+      background: lighten($medium_gray, 3%) !important;
+      outline: none;
+      &:focus {
+        background: #fff !important;
+      }
     }
 
     a.button.postfix {
@@ -450,6 +460,11 @@ section.jumbotron {
       padding: 10px 0;
     }
   }
+}
+
+
+.ui-state-error {
+  min-width: 390px;
 }
 
 
