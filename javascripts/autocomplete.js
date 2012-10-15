@@ -46,7 +46,7 @@
                 .appendTo( wrapper )
                 .val( value )
                 .attr( "title", "" )
-
+                .attr("id", "search_term")
                 .addClass( "ui-state-default ui-combobox-input twelve columns select_input" )
                 .autocomplete({
                     delay: 0,
@@ -69,6 +69,7 @@
                                       result.push({
                                           label: doc.first_name + " " + doc.last_name,
                                           value: doc.first_name + " " + doc.last_name,
+                                          id: doc.id,
                                           type: "doctor"
                                       });
                                   });
@@ -78,21 +79,22 @@
                                       result.push({
                                           label: disease.name,
                                           value: disease.name,
+                                          id: disease.id,
                                           type: "disease"
                                       });
-                                  })
+                                  });
+
+                                  $.map(data.specialties, function(item) {
+                                      speciality = item.Specialty;
+                                      result.push({
+                                          label: speciality.name,
+                                          value: speciality.name,
+                                          id: speciality.id,
+                                          type: "speciality"
+                                      });
+                                  });
 
                                   response(result);
-
-                                  
-
-                                  // response($.map(data.specialties, function(item) {
-                                  //     specialty = item.specialty;
-                                  //     return {
-                                  //         label: specialty.name,
-                                  //         value: specialty.name
-                                  //     }
-                                  // }));
                                   
                               }
                           })
@@ -102,6 +104,7 @@
                         that._trigger( "selected", event, {
                             item: ui.item.label
                         });
+                        window.selected_item = ui.item;
                         console.log(ui.item);
                         
                     },

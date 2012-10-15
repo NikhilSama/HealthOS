@@ -35,79 +35,154 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-</head>
-<body class="landing_page">
-  <header id="top" class="row">
-    <a id="logo" href="#"><h1 class="three columns"><i class="foundicon-plus"></i>HealthOS</h1></a>
-    <a href="#" class="login button tiny secondary right">Login</a>
-  </header>
+  <script type="text/template" id="header_template">
+    <header id="header" class="fixed contain-to-grid">
+    <nav class="top-bar">
 
-  <section class="main">
-    <div class="ask_container">
-      <div class="container_inner">
-      <div class="row">
-        <div class="seven columns centered">
-          <h5 class="subheader slogan">Get your question answered by over 15,000 doctors</h5>
-          <div class="row collapse">
-            <div class="nine mobile-three columns">
-              <!-- <input type="text" class="ask" placeholder="Type any health related question" /> -->
-              <div class="ui-widget">
-                  <select id="combobox">
-                      <option value="">Select one...</option>
-                  </select>
-              </div><!--ui-widget-->
+      <ul>
+        <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>HealthOS</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+      <section>
+        <ul class="left">
+          <li class="divider"></li>
+        </ul>
+
+        <ul class="right">
+          <!-- <li class="divider"></li>
+          <li class="search">
+            <form class="collapse">
+              <input type="text" placeholder="eg: Diabetes">
+              <button type="submit" class="secondary radius button">Search</button>
+            </form>
+          </li> -->
+
+          
+          
+          <li class="divider"></li>
+          <li class="active"><a href="#">Find Doctors</a></li>
+        
+
+          
+        </ul>
+      </section>
+    </nav>
+    </header>
+  </script>
+
+  <script type="text/template" id="landing_template">
+    <header id="top" class="row fade">
+      <a id="logo" href="#"><h1 class="three columns"><i class="foundicon-plus"></i>HealthOS</h1></a>
+      <a href="#" class="login button tiny secondary right">Login</a>
+    </header>
+
+    <section class="main fade">
+      <div class="ask_container">
+        <div class="container_inner">
+        <div class="row">
+          <div class="seven columns centered">
+            <h5 class="subheader slogan">Get your question answered by over 15,000 doctors</h5>
+            <div class="row collapse">
+              <div class="nine mobile-three columns">
+                <!-- <input type="text" class="ask" placeholder="Type any health related question" /> -->
+                <div class="ui-widget">
+                    <select id="combobox">
+                        <option value="">Select one...</option>
+                    </select>
+                </div><!--ui-widget-->
+              </div>
+              <div class="three mobile-one columns">
+                <a href="#" id="search_btn" class="postfix button expand">Ask!</a>
+              </div>
             </div>
-            <div class="three mobile-one columns">
-              <a href="#" class="postfix button expand">Ask!</a>
+          </div><!--seven_columns-->
+        
+
+        </div><!--container_inner-->
+      </div>
+
+      </div><!--ask_container-->
+    </section>
+
+    <section class="carousel fade">
+     <!-- Elastislide Carousel -->
+          <div id="carousel" class="es-carousel-wrapper">
+            <h1>Our panelists</h1>
+
+            <div class="es-carousel">
+              <ul>
+
+                <li><a href="#"><img src="images/large/2.jpg" alt="image02" /></a></li>
+                <li><a href="#"><img src="images/large/3.jpg" alt="image03" /></a></li>
+                <li><a href="#"><img src="images/large/4.jpg" alt="image04" /></a></li>
+                <li><a href="#"><img src="images/large/5.jpg" alt="image05" /></a></li>
+                <li><a href="#"><img src="images/large/6.jpg" alt="image06" /></a></li>
+                <li><a href="#"><img src="images/large/7.jpg" alt="image07" /></a></li>
+                <li><a href="#"><img src="images/large/8.jpg" alt="image08" /></a></li>
+                <li><a href="#"><img src="images/large/9.jpg" alt="image09" /></a></li>
+                <li><a href="#"><img src="images/large/10.jpg" alt="image10" /></a></li>
+                <li><a href="#"><img src="images/large/11.jpg" alt="image11" /></a></li>
+                <li><a href="#"><img src="images/large/12.jpg" alt="image12" /></a></li>
+                <li><a href="#"><img src="images/large/13.jpg" alt="image13" /></a></li>
+                <li><a href="#"><img src="images/large/14.jpg" alt="image14" /></a></li>
+                <li><a href="#"><img src="images/large/15.jpg" alt="image15" /></a></li>
+                <li><a href="#"><img src="images/large/16.jpg" alt="image16" /></a></li>
+                <li><a href="#"><img src="images/large/17.jpg" alt="image17" /></a></li>
+                <li><a href="#"><img src="images/large/18.jpg" alt="image18" /></a></li>
+                <li><a href="#"><img src="images/large/19.jpg" alt="image19" /></a></li>
+                <li><a href="#"><img src="images/large/20.jpg" alt="image20" /></a></li>
+                <li><a href="#"><img src="images/large/21.jpg" alt="image21" /></a></li>
+                <li><a href="#"><img src="images/large/22.jpg" alt="image22" /></a></li>
+                <li><a href="#"><img src="images/large/23.jpg" alt="image23" /></a></li>
+                <li><a href="#"><img src="images/large/24.jpg" alt="image24" /></a></li>
+                <li><a href="#"><img src="images/large/25.jpg" alt="image25" /></a></li>
+              </ul>
             </div>
           </div>
-        </div><!--seven_columns-->
-      
+          <!-- End Elastislide Carousel -->
 
-      </div><!--container_inner-->
-</div>
+    </section>
+  </script>
 
-    </div><!--ask_container-->
-  </section>
-
-  <section class="carousel">
-   <!-- Elastislide Carousel -->
-        <div id="carousel" class="es-carousel-wrapper">
-          <h1>Our panelists</h1>
-
-          <div class="es-carousel">
-            <ul>
-
-              <li><a href="#"><img src="images/large/2.jpg" alt="image02" /></a></li>
-              <li><a href="#"><img src="images/large/3.jpg" alt="image03" /></a></li>
-              <li><a href="#"><img src="images/large/4.jpg" alt="image04" /></a></li>
-              <li><a href="#"><img src="images/large/5.jpg" alt="image05" /></a></li>
-              <li><a href="#"><img src="images/large/6.jpg" alt="image06" /></a></li>
-              <li><a href="#"><img src="images/large/7.jpg" alt="image07" /></a></li>
-              <li><a href="#"><img src="images/large/8.jpg" alt="image08" /></a></li>
-              <li><a href="#"><img src="images/large/9.jpg" alt="image09" /></a></li>
-              <li><a href="#"><img src="images/large/10.jpg" alt="image10" /></a></li>
-              <li><a href="#"><img src="images/large/11.jpg" alt="image11" /></a></li>
-              <li><a href="#"><img src="images/large/12.jpg" alt="image12" /></a></li>
-              <li><a href="#"><img src="images/large/13.jpg" alt="image13" /></a></li>
-              <li><a href="#"><img src="images/large/14.jpg" alt="image14" /></a></li>
-              <li><a href="#"><img src="images/large/15.jpg" alt="image15" /></a></li>
-              <li><a href="#"><img src="images/large/16.jpg" alt="image16" /></a></li>
-              <li><a href="#"><img src="images/large/17.jpg" alt="image17" /></a></li>
-              <li><a href="#"><img src="images/large/18.jpg" alt="image18" /></a></li>
-              <li><a href="#"><img src="images/large/19.jpg" alt="image19" /></a></li>
-              <li><a href="#"><img src="images/large/20.jpg" alt="image20" /></a></li>
-              <li><a href="#"><img src="images/large/21.jpg" alt="image21" /></a></li>
-              <li><a href="#"><img src="images/large/22.jpg" alt="image22" /></a></li>
-              <li><a href="#"><img src="images/large/23.jpg" alt="image23" /></a></li>
-              <li><a href="#"><img src="images/large/24.jpg" alt="image24" /></a></li>
-              <li><a href="#"><img src="images/large/25.jpg" alt="image25" /></a></li>
+  <script type="text/template" id="footer_template">
+   <footer class="fade">
+      <div class="twelve columns">
+        <hr />
+        <div class="row">
+          <div class="five columns">
+            <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
+          </div>
+          <div class="seven columns">
+            <ul class="link-list right">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
         </div>
-        <!-- End Elastislide Carousel -->
+      </div> 
+    </footer>
+  </script>
 
-  </section>
+  <script type="text/template" id="doctor_template">
+    <section class="row doctor_profile_headshot">
+      <div class="image_wrapper two columns">
+        <span href="#" class="th"><img src="http://placehold.it/200x200&text=[img]" /></span>
+      </div>
+
+      <div class="ten columns">  
+        <h2><%= first_name %>  <%= last_name %></h2>
+        <h4 class="subheader">Lorem Ipsum is simply dummy text of the printing industry.</h4>
+      </div>
+    </section> 
+  </script>
+
+</head>
+<body class="landing_page">
+  
 
  <!--  <section class="main_image">
     <img src="images/docs2.jpg">
@@ -119,27 +194,7 @@
   
 
   
-  <footer>
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="five columns">
-          <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
-        </div>
-        <div class="seven columns">
-          <ul class="link-list right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> 
-  </footer>
-
+  
   
   
   
@@ -164,11 +219,16 @@
   <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
   <script src="javascripts/vendor/jquery.elastislide.js"></script>
   <script src="javascripts/autocomplete.js"></script>
+
+  <!-- Backbone -->
+  <script src="javascripts/vendor/underscore.js"></script>
+  <script src="javascripts/vendor/backbone.js"></script>
+
+  <!-- Initialize -->
+  <script src="javascripts/init.js"></script>
+
   <script>
-  $('#carousel').elastislide({
-        imageW  : 180,
-        minItems  : 5
-      });
+  
     
   </script>
 </body>
