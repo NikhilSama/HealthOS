@@ -307,63 +307,89 @@ section.jumbotron .find_doctor_field .button.radius {
   top: 3px;
   left: -5px;
 }
+/* line 358, ../sass/base.scss */
+.doctor_profile .exp {
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 361, ../sass/base.scss */
+.doctor_profile .exp:last-child {
+  border-bottom: none;
+}
 
-/* line 367, ../sass/base.scss */
+/* line 375, ../sass/base.scss */
 .healthline .dates {
   border-right: 5px solid #f1f1f1;
 }
-/* line 372, ../sass/base.scss */
+/* line 380, ../sass/base.scss */
 .healthline .dates_wrap:hover .dates {
   border-color: #d7d7d7;
 }
-/* line 377, ../sass/base.scss */
+/* line 385, ../sass/base.scss */
 .healthline fieldset {
   padding-bottom: 15px;
 }
-/* line 381, ../sass/base.scss */
+/* line 389, ../sass/base.scss */
 .healthline .health_timeline_header {
   font-weight: bold !important;
 }
 
-/* line 391, ../sass/base.scss */
+/* line 394, ../sass/base.scss */
+.flex-video {
+  padding-top: 0 !important;
+}
+
+/* line 398, ../sass/base.scss */
+#map {
+  min-height: 400px !important;
+}
+/* line 401, ../sass/base.scss */
+#map .infobubble .text {
+  color: #fff;
+  font-size: 10px;
+  line-height: 10px;
+  padding: 0;
+}
+
+/* line 415, ../sass/base.scss */
 .landing_page {
   border-top: 3px solid #0382f7;
 }
-/* line 393, ../sass/base.scss */
+/* line 417, ../sass/base.scss */
 .landing_page #logo h1 {
   color: #8e8e8f;
   font-size: 12px;
 }
-/* line 396, ../sass/base.scss */
+/* line 420, ../sass/base.scss */
 .landing_page #logo h1 i {
   font-size: 10px;
   position: relative;
   top: 1px;
   left: -2px;
 }
-/* line 406, ../sass/base.scss */
+/* line 430, ../sass/base.scss */
 .landing_page header#top {
   padding: 10px 0;
 }
-/* line 409, ../sass/base.scss */
+/* line 433, ../sass/base.scss */
 .landing_page header#top .login {
   margin-top: 8px;
 }
-/* line 415, ../sass/base.scss */
+/* line 439, ../sass/base.scss */
 .landing_page .main {
   background: url("../images/docs2.jpg") left top no-repeat;
   min-height: 400px;
 }
-/* line 418, ../sass/base.scss */
+/* line 442, ../sass/base.scss */
 .landing_page .main .ask_container {
   padding-top: 220px;
 }
-/* line 420, ../sass/base.scss */
+/* line 444, ../sass/base.scss */
 .landing_page .main .ask_container .container_inner {
   background: rgba(255, 255, 255, 0.55);
   padding-bottom: 10px;
 }
-/* line 425, ../sass/base.scss */
+/* line 449, ../sass/base.scss */
 .landing_page .main .slogan {
   margin-top: 0px !important;
   text-align: center;
@@ -371,28 +397,28 @@ section.jumbotron .find_doctor_field .button.radius {
   font-weight: bold;
   padding-top: 15px;
 }
-/* line 432, ../sass/base.scss */
+/* line 456, ../sass/base.scss */
 .landing_page .main input, .landing_page .main .select_input {
   padding: 20px 10px;
   border-color: #025AAB;
 }
-/* line 437, ../sass/base.scss */
+/* line 461, ../sass/base.scss */
 .landing_page .main .select_input {
   padding: 10px !important;
   padding-bottom: 8px !important;
   background: #f9f9f9 !important;
   outline: none;
 }
-/* line 442, ../sass/base.scss */
+/* line 466, ../sass/base.scss */
 .landing_page .main .select_input:focus {
   background: #fff !important;
 }
-/* line 447, ../sass/base.scss */
+/* line 471, ../sass/base.scss */
 .landing_page .main a.button.postfix {
   padding-top: 12px !important;
   padding-bottom: 28px;
 }
-/* line 454, ../sass/base.scss */
+/* line 478, ../sass/base.scss */
 .landing_page .es-carousel-wrapper h1 {
   color: #8e8e8f;
   font-size: 18px;
@@ -402,7 +428,7 @@ section.jumbotron .find_doctor_field .button.radius {
   padding: 10px 0;
 }
 
-/* line 466, ../sass/base.scss */
+/* line 490, ../sass/base.scss */
 .ui-state-error {
   min-width: 390px;
 }
