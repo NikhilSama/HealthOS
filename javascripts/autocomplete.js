@@ -52,23 +52,48 @@
                     delay: 0,
                     minLength: 0,
                     source: function(request, response) {
+                        console.log(request);
                           $.ajax({
-                              url: "http://ws.geonames.org/searchJSON",
-                              type: "POST",
+                              url: "http://docawards.com/specialties/autocomplete.json?term=" + request.term + "&jsonp_callback=cbck",
                               dataType: "jsonp",
+                              jsonpCallback: "cbck",
                               data: {
                                   featureClass: "P",
                                   style: "full",
                                   maxRows: 12,
-                                  name_startsWith: request.term
                               },
                               success: function(data) {
-                                  response($.map(data.geonames, function(item) {
-                                      return {
-                                          label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-                                          value: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName
-                                      }
-                                  }));
+                                  result = [];
+                                  $.map(data.doctors, function(item) {
+                                      doc = item.Doctor;
+                                      result.push({
+                                          label: doc.first_name + " " + doc.last_name,
+                                          value: doc.first_name + " " + doc.last_name,
+                                          type: "doctor"
+                                      });
+                                  });
+
+                                  $.map(data.diseases, function(item) {
+                                      disease = item.Disease;
+                                      result.push({
+                                          label: disease.name,
+                                          value: disease.name,
+                                          type: "disease"
+                                      });
+                                  })
+
+                                  response(result);
+
+                                  
+
+                                  // response($.map(data.specialties, function(item) {
+                                  //     specialty = item.specialty;
+                                  //     return {
+                                  //         label: specialty.name,
+                                  //         value: specialty.name
+                                  //     }
+                                  // }));
+                                  
                               }
                           })
                       },
@@ -90,7 +115,7 @@
             input.data( "autocomplete" )._renderItem = function( ul, item ) {
                 return $( "<li>" )
                     .data( "item.autocomplete", item )
-                    .append( "<a>" + item.label + "</a>" )
+                    .append( "<a>" + item.label + " <small>(" + item.type + ")</small></a>" )
                     .hover(function() {
                       console.log("Show description");
                     }, function() {
