@@ -104,7 +104,7 @@ section.jumbotron .find_doctor_field .button.radius {
 #content .feed_entry:hover {
   color: #282829;
 }
-/* line 165, ../sass/base.scss */
+/* line 166, ../sass/base.scss */
 #content .feed_entry {
   padding: 20px;
   border: 1px solid #f1f1f1;
@@ -112,19 +112,23 @@ section.jumbotron .find_doctor_field .button.radius {
   overflow: hidden;
   margin-bottom: 30px;
 }
-/* line 169, ../sass/base.scss */
+/* line 170, ../sass/base.scss */
 #content .feed_entry:hover {
   border-top: 4px solid #0382f7;
 }
-/* line 171, ../sass/base.scss */
+/* line 172, ../sass/base.scss */
 #content .feed_entry:hover .meta.bottom {
   background: #0382f7;
 }
-/* line 174, ../sass/base.scss */
+/* line 175, ../sass/base.scss */
 #content .feed_entry:hover .question.h3 {
   color: black;
 }
 /* line 180, ../sass/base.scss */
+#content .feed_entry p.bio {
+  font-size: 13px;
+}
+/* line 185, ../sass/base.scss */
 #content .feed_entry .meta {
   background: #e1e1e1;
   margin-left: -20px;
@@ -132,30 +136,30 @@ section.jumbotron .find_doctor_field .button.radius {
   padding-top: 10px;
   height: 45px;
 }
-/* line 186, ../sass/base.scss */
+/* line 191, ../sass/base.scss */
 #content .feed_entry .meta.top {
   margin-top: -20px;
 }
-/* line 190, ../sass/base.scss */
+/* line 195, ../sass/base.scss */
 #content .feed_entry .meta.bottom {
   position: relative;
   top: 20px;
   height: 52px;
   background: #73aef7;
 }
-/* line 195, ../sass/base.scss */
-#content .feed_entry .meta.bottom button.button {
+/* line 200, ../sass/base.scss */
+#content .feed_entry .meta.bottom a.button {
   margin-right: 30px;
   padding: 5px 18px 6px;
   font-size: 14px;
 }
-/* line 199, ../sass/base.scss */
-#content .feed_entry .meta.bottom button.button span.foundicon-checkmark {
+/* line 204, ../sass/base.scss */
+#content .feed_entry .meta.bottom a.button span.foundicon-checkmark {
   padding-right: 10px;
   position: relative;
   top: 2px;
 }
-/* line 206, ../sass/base.scss */
+/* line 211, ../sass/base.scss */
 #content .feed_entry .meta img {
   padding-right: 10px;
   padding-top: 0;
@@ -163,7 +167,7 @@ section.jumbotron .find_doctor_field .button.radius {
   float: left;
   margin-top: 4px;
 }
-/* line 214, ../sass/base.scss */
+/* line 219, ../sass/base.scss */
 #content .feed_entry .meta p.time {
   color: #282829;
   font-style: italic;
@@ -172,95 +176,95 @@ section.jumbotron .find_doctor_field .button.radius {
   padding-right: 10px;
   margin-top: 4px;
 }
-/* line 223, ../sass/base.scss */
+/* line 228, ../sass/base.scss */
 #content .feed_entry .question {
   margin-top: 0px;
 }
-/* line 225, ../sass/base.scss */
+/* line 230, ../sass/base.scss */
 #content .feed_entry .question h3 {
   margin: 0;
 }
-/* line 228, ../sass/base.scss */
+/* line 233, ../sass/base.scss */
 #content .feed_entry .question a:hover h3 {
   color: #282829;
 }
-/* line 231, ../sass/base.scss */
+/* line 236, ../sass/base.scss */
 #content .feed_entry .question a:active h3 {
   color: #0267c5;
 }
-/* line 236, ../sass/base.scss */
+/* line 241, ../sass/base.scss */
 #content .feed_entry .answer {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 242, ../sass/base.scss */
+/* line 247, ../sass/base.scss */
 #content .feed_entry.doctor_list h3.doctor_name {
   margin-top: 0;
 }
-/* line 245, ../sass/base.scss */
+/* line 250, ../sass/base.scss */
 #content .feed_entry.doctor_list .icon {
   position: relative;
   left: -2px;
   top: 2px;
 }
-/* line 250, ../sass/base.scss */
+/* line 255, ../sass/base.scss */
 #content .feed_entry.doctor_list .meta.bottom {
   width: 120%;
   height: 55px;
 }
-/* line 255, ../sass/base.scss */
+/* line 260, ../sass/base.scss */
 #content .feed_entry.doctor_list .about_doctor li {
   font-size: 14px;
   padding-top: 5px;
 }
-/* line 264, ../sass/base.scss */
+/* line 269, ../sass/base.scss */
 #content .nav_sidebar .health_profile_header {
   font-size: 14px;
   color: #585858;
 }
-/* line 267, ../sass/base.scss */
+/* line 272, ../sass/base.scss */
 #content .nav_sidebar .health_profile_header strong {
   color: #323232;
 }
-/* line 272, ../sass/base.scss */
+/* line 277, ../sass/base.scss */
 #content .nav_sidebar dl.tabs.vertical dd.active a {
   background: #3772AC;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
 }
-/* line 277, ../sass/base.scss */
+/* line 282, ../sass/base.scss */
 #content .nav_sidebar dl.tabs.vertical dd a:hover {
   background: #d8d8d8;
 }
-/* line 281, ../sass/base.scss */
+/* line 286, ../sass/base.scss */
 #content .nav_sidebar dl.tabs.vertical dd.active a:hover {
   background: #3772AC;
 }
-/* line 285, ../sass/base.scss */
+/* line 290, ../sass/base.scss */
 #content .nav_sidebar dl.tabs.vertical dd.active {
   border-left-color: #2B5885;
   border-top-color: #2B5885;
 }
-/* line 290, ../sass/base.scss */
+/* line 295, ../sass/base.scss */
 #content .nav_sidebar .profile_image_holder {
   margin-bottom: 20px;
   position: relative;
 }
-/* line 294, ../sass/base.scss */
+/* line 299, ../sass/base.scss */
 #content .nav_sidebar .profile_image_holder .button.edit_link {
   position: absolute;
   top: 85px;
   left: 70px;
   display: none;
 }
-/* line 301, ../sass/base.scss */
+/* line 306, ../sass/base.scss */
 #content .nav_sidebar .profile_image_holder:hover .edit_link {
   display: block;
 }
-/* line 307, ../sass/base.scss */
+/* line 312, ../sass/base.scss */
 #content .recommended_topics {
   overflow: hidden;
 }
-/* line 309, ../sass/base.scss */
+/* line 314, ../sass/base.scss */
 #content .recommended_topics h3 {
   text-transform: uppercase;
   font-size: 12px;
@@ -270,80 +274,85 @@ section.jumbotron .find_doctor_field .button.radius {
   padding: 10px;
   background: #73aef7;
 }
-/* line 318, ../sass/base.scss */
+/* line 323, ../sass/base.scss */
 #content .recommended_topics:hover {
   background: #FFF;
 }
-/* line 319, ../sass/base.scss */
+/* line 324, ../sass/base.scss */
 #content .recommended_topics:hover h3 {
   background: #0382f7;
   color: #FFF;
 }
-/* line 326, ../sass/base.scss */
+/* line 331, ../sass/base.scss */
 #content .recommended_topics ul {
   padding: 5px;
 }
-/* line 328, ../sass/base.scss */
+/* line 333, ../sass/base.scss */
 #content .recommended_topics ul li {
   padding: 10px  0px !important;
   border-top: 1px solid #e4e4e4;
 }
-/* line 331, ../sass/base.scss */
+/* line 336, ../sass/base.scss */
 #content .recommended_topics ul li:hover {
   border-color: #d7d7d7;
 }
 
-/* line 345, ../sass/base.scss */
+/* line 350, ../sass/base.scss */
 .doctor_profile {
   margin-top: 80px !important;
 }
-/* line 348, ../sass/base.scss */
+/* line 353, ../sass/base.scss */
 .doctor_profile .feed_entry {
   padding-top: 5px !important;
 }
-/* line 352, ../sass/base.scss */
+/* line 357, ../sass/base.scss */
 .doctor_profile table tr i {
   position: relative;
   top: 3px;
   left: -5px;
 }
-/* line 358, ../sass/base.scss */
+/* line 363, ../sass/base.scss */
 .doctor_profile .exp {
   padding-top: 10px;
   border-bottom: 1px solid #ddd;
 }
-/* line 361, ../sass/base.scss */
+/* line 366, ../sass/base.scss */
 .doctor_profile .exp:last-child {
   border-bottom: none;
 }
 
-/* line 375, ../sass/base.scss */
+/* line 380, ../sass/base.scss */
+.doctor_profile_headshot .subheader {
+  font-size: 20px;
+}
+
+/* line 386, ../sass/base.scss */
 .healthline .dates {
   border-right: 5px solid #f1f1f1;
 }
-/* line 380, ../sass/base.scss */
+/* line 391, ../sass/base.scss */
 .healthline .dates_wrap:hover .dates {
   border-color: #d7d7d7;
 }
-/* line 385, ../sass/base.scss */
+/* line 396, ../sass/base.scss */
 .healthline fieldset {
   padding-bottom: 15px;
 }
-/* line 389, ../sass/base.scss */
+/* line 400, ../sass/base.scss */
 .healthline .health_timeline_header {
   font-weight: bold !important;
 }
 
-/* line 394, ../sass/base.scss */
+/* line 405, ../sass/base.scss */
 .flex-video {
   padding-top: 0 !important;
 }
 
-/* line 398, ../sass/base.scss */
+/* line 409, ../sass/base.scss */
 #map {
   min-height: 400px !important;
 }
-/* line 401, ../sass/base.scss */
+/* line 412, ../sass/base.scss */
 #map .infobubble .text {
   color: #fff;
   font-size: 10px;
@@ -351,45 +360,45 @@ section.jumbotron .find_doctor_field .button.radius {
   padding: 0;
 }
 
-/* line 415, ../sass/base.scss */
+/* line 426, ../sass/base.scss */
 .landing_page {
   border-top: 3px solid #0382f7;
 }
-/* line 417, ../sass/base.scss */
+/* line 428, ../sass/base.scss */
 .landing_page #logo h1 {
   color: #8e8e8f;
   font-size: 12px;
 }
-/* line 420, ../sass/base.scss */
+/* line 431, ../sass/base.scss */
 .landing_page #logo h1 i {
   font-size: 10px;
   position: relative;
   top: 1px;
   left: -2px;
 }
-/* line 430, ../sass/base.scss */
+/* line 441, ../sass/base.scss */
 .landing_page header#top {
   padding: 10px 0;
 }
-/* line 433, ../sass/base.scss */
+/* line 444, ../sass/base.scss */
 .landing_page header#top .login {
   margin-top: 8px;
 }
-/* line 439, ../sass/base.scss */
+/* line 450, ../sass/base.scss */
 .landing_page .main {
   background: url("../images/docs2.jpg") left top no-repeat;
   min-height: 400px;
 }
-/* line 442, ../sass/base.scss */
+/* line 453, ../sass/base.scss */
 .landing_page .main .ask_container {
   padding-top: 220px;
 }
-/* line 444, ../sass/base.scss */
+/* line 455, ../sass/base.scss */
 .landing_page .main .ask_container .container_inner {
   background: rgba(255, 255, 255, 0.55);
   padding-bottom: 10px;
 }
-/* line 449, ../sass/base.scss */
+/* line 460, ../sass/base.scss */
 .landing_page .main .slogan {
   margin-top: 0px !important;
   text-align: center;
@@ -397,28 +406,28 @@ section.jumbotron .find_doctor_field .button.radius {
   font-weight: bold;
   padding-top: 15px;
 }
-/* line 456, ../sass/base.scss */
+/* line 467, ../sass/base.scss */
 .landing_page .main input, .landing_page .main .select_input {
   padding: 20px 10px;
   border-color: #025AAB;
 }
-/* line 461, ../sass/base.scss */
+/* line 472, ../sass/base.scss */
 .landing_page .main .select_input {
   padding: 10px !important;
   padding-bottom: 8px !important;
   background: #f9f9f9 !important;
   outline: none;
 }
-/* line 466, ../sass/base.scss */
+/* line 477, ../sass/base.scss */
 .landing_page .main .select_input:focus {
   background: #fff !important;
 }
-/* line 471, ../sass/base.scss */
+/* line 482, ../sass/base.scss */
 .landing_page .main a.button.postfix {
   padding-top: 12px !important;
   padding-bottom: 28px;
 }
-/* line 478, ../sass/base.scss */
+/* line 489, ../sass/base.scss */
 .landing_page .es-carousel-wrapper h1 {
   color: #8e8e8f;
   font-size: 18px;
@@ -428,7 +437,30 @@ section.jumbotron .find_doctor_field .button.radius {
   padding: 10px 0;
 }
 
-/* line 490, ../sass/base.scss */
+/* line 501, ../sass/base.scss */
 .ui-state-error {
   min-width: 390px;
+}
+
+/* line 505, ../sass/base.scss */
+.ui-autocomplete.ui-menu.ui-widget {
+  width: 390px !important;
+  height: 200px;
+  overflow-y: auto;
+}
+
+/* line 511, ../sass/base.scss */
+.button.dropdown {
+  cursor: default;
+}
+
+/* line 515, ../sass/base.scss */
+.button.dropdown > ul li {
+  display: block;
+  color: #555;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 6px 14px;
+  text-align: left;
+  cursor: default !important;
 }

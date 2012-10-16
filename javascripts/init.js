@@ -55,6 +55,7 @@ jQuery(document).ready(function($) {
       });
       
   }
+  
   // Models
   window.Doctor = Backbone.Model.extend({
     sync: function(method, model, options) {
@@ -78,7 +79,88 @@ jQuery(document).ready(function($) {
   });
 
 
+  // For Doc listing page
+  window.DoctorHeadShot = Backbone.Model.extend();
 
+
+  // Generic
+  window.DoctorList = Backbone.Collection.extend({
+    model: DoctorHeadShot,
+    
+    sync: function(method, model, options) {
+      options = options || {};
+      options.dataType = "jsonp"; 
+      options.jsonpCallback = "cbck";
+      Backbone.sync(method, model, options);
+    }  
+  });
+
+  window.DiseaseDoctorList = window.DoctorList.extend({
+    initialize: function(options) {
+      this.id = options.id;
+    },
+
+    url: function() {
+      return "http://docawards.com/doctors/get_doctors.json?disease_id=" + this.id + "&jsonp_callback=cbck"
+    },
+  });
+
+  window.SpecialityDoctorList = window.DoctorList.extend({
+    initialize: function(options) {
+      this.id = options.id;
+    },
+
+    url: function() {
+      return "http://docawards.com/doctors/get_doctors.json?speciality_id=" + this.id + "&jsonp_callback=cbck"
+    },
+  });
+
+  window.DoctorHeadShotView = Backbone.View.extend({
+    className: "feed_entry doctor_list six columns",
+    template: _.template($("#feed_entry").html()),
+    initialize: function() {
+      this.render();
+    },
+
+    render:function () {
+      console.log(this.model.toJSON());
+      $(this.el).html(this.template(this.model.toJSON()));
+      return this;
+    },
+
+  });
+
+  window.DoctorListView = Backbone.View.extend({
+    className: "row doctor_list_view",
+    id: "content",
+    initialize: function() {
+      var that = this;
+      this.collection.fetch({
+        success: function(collection) {
+          console.log(collection);
+          that.render();
+        }
+      })
+    },
+    render: function() {
+      var that = this;
+      _.each(this.collection.models, function(doctor) {
+        var profile = new DoctorHeadShotView({model: doctor});
+        $(that.el).empty();
+        $(profile.el).wrapInChunks('<div class="row" />', 2).appendTo($(that.el));
+
+
+        
+      });
+
+      $("body").append(this.el);
+      $(document).foundationButtons();
+    }
+
+  })
+
+
+  // Views
   window.DoctorView = Backbone.View.extend({
     className: "row doctor_profile",
     id: "content",
@@ -125,7 +207,6 @@ jQuery(document).ready(function($) {
   });
 
 
-  // Views
   window.HomeView = Backbone.View.extend({
     template: _.template($("#landing_template").html()),
     initialize: function()  {
@@ -139,6 +220,17 @@ jQuery(document).ready(function($) {
 
   window.FooterView = Backbone.View.extend({
     template: _.template($("#footer_template").html()),
+    initialize: function()  {
+      this.render();
+    },
+
+    render: function()  {
+      $("body").append(this.template());
+    } 
+  });
+
+  window.JumbotronView = Backbone.View.extend({
+    template: _.template($("#jumbotron").html()),
     initialize: function()  {
       this.render();
     },
@@ -163,8 +255,10 @@ jQuery(document).ready(function($) {
   // Router
   var AppRouter = Backbone.Router.extend({
     routes:{
-        ""            :       "home",
-        "doctor/:id"  :       "doctorProfile"
+        ""                :       "home",
+        "doctor/:id"      :       "doctorProfile",
+        "disease/:id"     :       "diseaseListing",
+        "speciality/:id"  :       "specialityListing"
     },
 
     home: function()  {
@@ -179,12 +273,17 @@ jQuery(document).ready(function($) {
 
       $("#search_btn").live("click", function() {
         var selected = window.selected_item;
-        
         if(!selected) {
           alert("Please select a term!");
           return false;
         } else if(selected.type == "doctor") {
           window.app.navigate("#doctor/" + selected.id, true)
+          return false;
+        } else if(selected.type == "disease") {
+          window.app.navigate("#disease/" + selected.id, true)
+          return false;
+        } else if(selected.type == "speciality") {
+          window.app.navigate("#speciality/" + selected.id, true);
           return false;
         }
         
@@ -209,8 +308,23 @@ jQuery(document).ready(function($) {
       var header_view = new HeaderView();
       var doctor = new Doctor({id: id});
       var doctor_view = new DoctorView({model: doctor});
-      
+    },
+
+    diseaseListing: function(id) {
+      var header_view = new HeaderView();
+      var jumbotron_view = new JumbotronView();
+      var doctor_list = new DiseaseDoctorList({ id: id });
+      var doctor_list_view = new DoctorListView({collection: doctor_list});
+    },
+
+    specialityListing: function(id) {
+      var header_view = new HeaderView();
+      var jumbotron_view = new JumbotronView();
+      var doctor_list = new SpecialityDoctorList({ id: id });
+      var doctor_list_view = new DoctorListView({collection: doctor_list});
     }
+
+
   });
 
   window.app = new AppRouter();

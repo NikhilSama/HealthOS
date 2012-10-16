@@ -17,7 +17,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
 
-  <title>HealthOS - Healthline</title>
+  <title>DocAwards - Healthline</title>
 
   <link rel="stylesheet" href="stylesheets/app.css">
   <link rel="stylesheet" href="stylesheets/general_foundicons.css">
@@ -40,7 +40,7 @@
     <nav class="top-bar">
 
       <ul>
-        <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>HealthOS</a></h1></li>
+        <li class="name"><h1><a href="#"><span class="foundicon-plus"></span>DocAwards</a></h1></li>
         <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
       <section>
@@ -72,7 +72,7 @@
 
   <script type="text/template" id="landing_template">
     <header id="top" class="row fade">
-      <a id="logo" href="#"><h1 class="three columns"><i class="foundicon-plus"></i>HealthOS</h1></a>
+      <a id="logo" href="#"><h1 class="three columns"><i class="foundicon-plus"></i>DocAwards</h1></a>
       <a href="#" class="login button tiny secondary right">Login</a>
     </header>
 
@@ -150,7 +150,7 @@
         <hr />
         <div class="row">
           <div class="five columns">
-            <p>&copy; Copyright HealthOS. All Rights Reserved.</p>
+            <p>&copy; Copyright DocAwards. All Rights Reserved.</p>
           </div>
           <div class="seven columns">
             <ul class="link-list right">
@@ -170,12 +170,12 @@
   <script type="text/template" id="doctor_template">
     <section class="row doctor_profile_headshot">
       <div class="image_wrapper two columns">
-        <span href="#" class="th"><img src="http://placehold.it/200x200&text=[img]" /></span>
+        <span href="#" class="th"><img src="http://docawards.com/<%= headshot.image %>" /></span>
       </div>
 
       <div class="ten columns">  
         <h2><%= headshot.first_name %>  <%= headshot.last_name %></h2>
-        <h4 class="subheader">Lorem Ipsum is simply dummy text of the printing industry.</h4>
+        <h4 class="subheader"><%= headshot.one_line_intro %></h4>
       </div>
     </section> 
 
@@ -284,8 +284,80 @@
 
     </aside>
     </section>
+  </script>
+
+  <script type="text/template" id="feed_entry">
+      <div class="row ">
+        <div class="three columns">
+          <a href="#" class="th"><img src="http://docawards.com/<%= Doctor.image %>" /></a>
+        </div>
+
+        <div class="nine columns">
+          <a href="#"><h3 class="doctor_name">Dr. <%= Doctor.first_name %> <%= Doctor.last_name %></h3></a>
+          <p class="bio"><%= Doctor.one_line_intro %></p>
+        </div>
+      </div><!--row-->
+
+      
+
+      <div class="row meta bottom">
+        <div class="seven columns">
+          <div href="#" class="tiny button dropdown up">
+            <span class="foundicon-graph icon"></span>Specialization
+            <span></span>
+            <ul>
+              <% _.each(Docspeclink, function(specialization) { %>
+                <li><%= specialization["Specialty"]["name"] %></li>
+              <% }); %>
+            </ul>
+          </div><!--button-->
+
+
+          <div href="#" class="tiny button dropdown up">
+            <span class="foundicon-location icon"></span>Location
+            <span></span>
+            <ul>
+              <% _.each(Docconsultlocation, function(location) { %>
+                <li><%= location["Location"]["name"] %></li>
+              <% }); %>
+            </ul>
+          </div><!--button-->
+        </div>
+
+        <div class="thank_container five columns">
+          <a href="#doctor/<%= Doctor.id %>" class="button tiny">View Profile</a>
+        </div>
+      </div>
 
   </script>
+
+  <script type="text/template" id="jumbotron">
+  <!-- Ask Question -->
+  <section class="jumbotron">
+    <div class="row find_main">
+      <div class="four columns">
+        <h2><span class="foundicon-location"></span>Find a doctor</h2>
+      </div>
+
+      <div class="eight columns find_doctor_field">
+        <div class="row">
+          <div class="ten columns">
+            <div class="eight columns">
+              <input type="text" placeholder="Specialization" />
+            </div>
+            <div class="four columns">
+              <input type="text" placeholder="ZIP" />
+            </div>
+          </div>
+          <div class="two columns">
+            <input type="submit" class="button radius" value="Find" />
+          </div>
+        </div>
+
+      </div><!--eight_columns-->
+    </div><!--row-->
+  </section>
+</script>
 
 </head>
 <body class="landing_page">
@@ -333,6 +405,7 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble-compiled.js"></script>
   <!-- Initialize -->
+  <script src="javascripts/vendor/jquery.wrapinbox.js"></script>
   <script src="javascripts/init.js"></script>
 
 

@@ -1,5 +1,5 @@
 // -------------------------------------------------------------
-// Template : HealthOS v1.0
+// Template : DocAwards v1.0
 // Author : Bharani Muthukumaraswamy <bharani@abhayam.co.in>
 // Date : 08-10-2012
 // Tags : Minimal, friendly, responsive, clean, light
@@ -162,6 +162,7 @@ section.jumbotron {
             color: darken($dark_gray, 20%);
 
   }
+
   .feed_entry {
     padding: 20px;
     border: 1px solid $medium_gray;
@@ -174,6 +175,10 @@ section.jumbotron {
       .question.h3 {
         color: darken($dark_gray, 50%);
       }
+    }
+
+    p.bio {
+      font-size: 13px;
     }
     overflow: hidden;
     margin-bottom: 30px;
@@ -192,7 +197,7 @@ section.jumbotron {
         top: 20px;
         height: 52px;
         background: $light_blue;
-        button.button {
+        a.button {
           margin-right: 30px;
           padding: 5px 18px 6px;
           font-size: 14px;
@@ -371,6 +376,12 @@ section.jumbotron {
 // Doctor Profile
 // ---------------------------------------
 
+.doctor_profile_headshot {
+  .subheader {
+    font-size: 20px;
+  }
+}
+
 .healthline {
   .dates {
     border-right: 5px solid $medium_gray;
@@ -489,6 +500,26 @@ section.jumbotron {
 
 .ui-state-error {
   min-width: 390px;
+}
+
+.ui-autocomplete.ui-menu.ui-widget {
+  width: 390px !important;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.button.dropdown {
+  cursor: default;
+}
+
+.button.dropdown > ul li {
+  display: block;
+  color: #555;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 6px 14px;
+  text-align: left;  
+  cursor: default !important;
 }
 
 
