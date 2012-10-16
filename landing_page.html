@@ -21,6 +21,7 @@
 
   <link rel="stylesheet" href="stylesheets/app.css">
   <link rel="stylesheet" href="stylesheets/general_foundicons.css">
+  <link rel="stylesheet" href="stylesheets/chosen.css">
   <link rel="stylesheet" href="stylesheets/base.css">
 
 
@@ -82,19 +83,17 @@
         <div class="row">
           <div class="seven columns centered">
             <h5 class="subheader slogan">Get your question answered by over 15,000 doctors</h5>
-            <div class="row collapse">
+            <form id="chosen_form" class="row collapse">
               <div class="nine mobile-three columns">
-                <!-- <input type="text" class="ask" placeholder="Type any health related question" /> -->
-                <div class="ui-widget">
-                    <select id="combobox">
-                        <option value="">Select one...</option>
-                    </select>
-                </div><!--ui-widget-->
+ 
+                <select class="chzn-select">
+                  <option value="">Select a term/question</option>
+                </select>
               </div>
               <div class="three mobile-one columns">
                 <a href="#" id="search_btn" class="postfix button expand">Ask!</a>
               </div>
-            </div>
+            </form>
           </div><!--seven_columns-->
         
 
@@ -294,7 +293,7 @@
 
         <div class="nine columns">
           <a href="#"><h3 class="doctor_name">Dr. <%= Doctor.first_name %> <%= Doctor.last_name %></h3></a>
-          <p class="bio"><%= Doctor.one_line_intro %></p>
+          <p class="bui"><%= Doctor.one_line_intro %></p>
         </div>
       </div><!--row-->
 
@@ -397,7 +396,8 @@
   <script src="javascripts/foundation/app.js"></script>
   <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
   <script src="javascripts/vendor/jquery.elastislide.js"></script>
-  <script src="javascripts/autocomplete.js"></script>
+  <script src="javascripts/vendor/chosen.jquery.min.js"></script>
+  <script src="javascripts/autocomplete_chosen.js"></script>
 
   <!-- Backbone -->
   <script src="javascripts/vendor/underscore.js"></script>

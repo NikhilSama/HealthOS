@@ -464,3 +464,10 @@ section.jumbotron .find_doctor_field .button.radius {
   text-align: left;
   cursor: default !important;
 }
+
+/* line 525, ../sass/base.scss */
+.chzn-container-single .chzn-single {
+  height: 42px;
+  line-height: 42px;
+  font-size: 19px;
+}

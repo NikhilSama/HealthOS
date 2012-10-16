@@ -111,7 +111,7 @@ jQuery(document).ready(function($) {
     },
 
     url: function() {
-      return "http://docawards.com/doctors/get_doctors.json?speciality_id=" + this.id + "&jsonp_callback=cbck"
+      return "http://docawards.com/doctors/get_doctors.json?speciality=" + this.id + "&jsonp_callback=cbck"
     },
   });
 
@@ -265,25 +265,92 @@ jQuery(document).ready(function($) {
       var landing_view = new HomeView();
       var footer_view = new FooterView();
 
-      $( "#combobox" ).combobox();
+      $(".chzn-select").chosen();
+      $('.chzn-search input').autocomplete({
+  source: function( request, response ) {
+    $.ajax({
+      url: "http://docawards.com/specialties/autocomplete.json?term=" + request.term + "&jsonp_callback=cbck",
+      dataType: "jsonp",
+      jsonpCallback: "cbck",
+      data: {
+          featureClass: "P",
+          style: "full",
+          maxRows: 12,
+      },
+      
+      beforeSend: function(){$('.chzn-select').empty();$('ul.chzn-results').empty();},
+      success: function( data ) {
+        result = [];
+        $.map(data.doctors, function(item) {
+            doc = item.Doctor;
+            result.push({
+                label: doc.first_name + " " + doc.last_name,
+                value: doc.first_name + " " + doc.last_name,
+                id: doc.id,
+                type: "doctor"
+            });
+        });
+
+        $.map(data.diseases, function(item) {
+            disease = item.Disease;
+            result.push({
+                label: disease.name,
+                value: disease.name,
+                id: disease.id,
+                type: "disease"
+            });
+        });
+
+        $.map(data.specialties, function(item) {
+            speciality = item.Specialty;
+            result.push({
+                label: speciality.name,
+                value: speciality.name,
+                id: speciality.id,
+                type: "speciality"
+            });
+        });
+
+
+        response( $.map( result, function( item ) {
+          $('ul.chzn-results').append('<li class="active-result">' + item.label +       '</li>');
+            $('.chzn-select').append($('<option></option>')
+                .val(item.label)
+                .attr("data-type", item.type)
+                .attr("data-id", item.id)
+                .html(item.value));
+            $(".chzn-select").trigger("liszt:updated");
+          }))
+      }
+
+    })
+  }
+});
+
       $('#carousel').elastislide({
         imageW  : 180,
         minItems  : 5
       });
 
+      $(".active-result").live("click", function(ui)  {
+        console.log(ui);
+      })
       $("#search_btn").live("click", function() {
-        var selected = window.selected_item;
+        var selected = $(".chzn-select option:selected"),
+            type = selected.data("type"),
+            id = selected.data("id");
+
         if(!selected) {
           alert("Please select a term!");
           return false;
-        } else if(selected.type == "doctor") {
-          window.app.navigate("#doctor/" + selected.id, true)
+        } else if(type == "doctor") {
+          window.app.navigate("#doctor/" + id, true)
           return false;
-        } else if(selected.type == "disease") {
-          window.app.navigate("#disease/" + selected.id, true)
+        } else if(type == "disease") {
+          window.app.navigate("#disease/" + id, true)
           return false;
-        } else if(selected.type == "speciality") {
-          window.app.navigate("#speciality/" + selected.id, true);
+        } else if(type == "speciality") {
+          window.app.navigate("#speciality/" + id, true);
           return false;
         }
         

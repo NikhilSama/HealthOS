@@ -62,6 +62,7 @@
                                   style: "full",
                                   maxRows: 12,
                               },
+                              
                               success: function(data) {
                                   result = [];
                                   $.map(data.doctors, function(item) {
