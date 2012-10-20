@@ -72,9 +72,26 @@
   </script>
 
   <script type="text/template" id="landing_template">
+      <div id="signup_modal" class="reveal-modal [expand, xlarge, large, medium, small]">
+        <h2>Awesome. I have it.</h2>
+        <p class="lead">Your couch.  I its mine.</p>
+        <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+
+      <div id="login_modal" class="reveal-modal [expand, xlarge, large, medium, small]">
+        <h2>Awesome. I have it.</h2>
+        <p class="lead">Your couch.  I its mine.</p>
+        <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+
     <header id="top" class="row fade">
       <a id="logo" href="#"><h1 class="three columns"><i class="foundicon-plus"></i>DocAwards</h1></a>
-      <a href="#" class="login button tiny secondary right">Login</a>
+      <div class="right">
+        <a href="#" class="btn signup button tiny primary">Signup</a>
+        <a href="#" class="btn login button tiny secondary">Login</a>
+      </div>
     </header>
 
     <section class="main fade">
@@ -370,15 +387,117 @@
   </form>
 </script>
 
+<script type="text/template" id="create_profile">
+  <dl class="tabs contained">
+    <dd class="active"><a href="#create_profile/personal_details">Personal Details</a></dd>
+    <dd><a href="#create_profile/specializations">Specializations</a></dd>
+    <dd><a href="#create_profile/qualifications">Qualifications</a></dd>
+    <dd><a href="#create_profile/experiences">Experiences</a></dd>
+    <dd><a href="#create_profile/consultation">Consultation</a></dd>
+    <dd><a href="#create_profile/contact_details">Contact Details</a></dd>
+  </dl>
+
+
+  <ul class="tabs-content contained">
+    <li class="active" id="personal_detailsTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#" class="button tiny secondary prev disabled">Previous</a>
+          <a href="#create_profile/specializations" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+
+    </li>
+
+
+    <li id="specializationsTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/personal_details" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/qualifications" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+
+    </li>
+
+
+    <li id="qualificationsTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/specializations" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/experiences" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+    </li>
+
+
+    <li id="experiencesTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/qualifications" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/consultation" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+    </li>
+
+
+    <li id="consultationTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/experiences" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/contact_details" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+    </li>
+
+
+    <li id="contact_detailsTab">
+      <div class="row">
+        <div class="twelve columns">
+          This is simple tab 1s content. Pretty neat, huh?
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/consultation" class="button tiny secondary prev">Previous</a>
+          <a href="#" class="button tiny success next save disabled">Create</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+</script>
+
 </head>
 <body class="landing_page">
-  
 
- <!--  <section class="main_image">
-    <img src="images/docs2.jpg">
 
-  </section> -->
-    
   
   <!-- Footer -->
   

@@ -54,14 +54,17 @@ $dark_blue: #0382F7;
   box-sizing: border-box;
 }
 
-
-//city
-
-form {
-  margin: 80px auto;
-  width: 100px;
+.reveal-modal-bg  {
+  background: rgba(0, 0, 0, 0.75);
 }
 
+.dropdown ul form {
+  width: 180px;
+}
+
+.button_list {
+  margin-right: 20px;
+}
 
 // ---------------------------------------
 // Shared styles
@@ -448,7 +451,7 @@ section.jumbotron {
   header#top {
     padding: 10px 0;
 
-    .login {
+    .btn {
       margin-top: 8px;
     }
 
@@ -536,6 +539,13 @@ section.jumbotron {
 }
 
 
+// ---------------------------------------
+// Create Profile
+// ---------------------------------------
+
+.create_profile {
+  margin-top: 80px !important;
+}
 
 
 

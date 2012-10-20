@@ -30,7 +30,7 @@
       $(this).children('ul').toggleClass('show-dropdown');
     });
 
-    $doc.on('click.fndtn', 'body, html', function () {
+    $doc.on('click.fndtn', 'body:not(.dropdown ul), html:not(.dropdown ul)', function () {
       $('.button.dropdown ul').removeClass('show-dropdown');
     });
 

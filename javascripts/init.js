@@ -75,8 +75,6 @@ jQuery(document).ready(function($) {
 
   Backbone.emulateHTTP = true;
 
-
-  
   // Test Model
   window.City = Backbone.Model.extend({
 
@@ -131,12 +129,6 @@ jQuery(document).ready(function($) {
 
   // Models
   window.Doctor = Backbone.Model.extend({
-    // sync: function(method, model, options) {
-    //   options = options || {};
-    //   options.dataType = "jsonp"; 
-    //   options.jsonpCallback = "cbck";
-    //   Backbone.sync(method, model, options);
-    // },
 
     initialize: function (options) {
       this.id = options.id;  
@@ -159,13 +151,6 @@ jQuery(document).ready(function($) {
   // Generic
   window.DoctorList = Backbone.Collection.extend({
     model: DoctorHeadShot,
-    
-    sync: function(method, model, options) {
-      options = options || {};
-      options.dataType = "jsonp"; 
-      options.jsonpCallback = "cbck";
-      Backbone.sync(method, model, options);
-    }  
   });
 
   window.DiseaseDoctorList = window.DoctorList.extend({
@@ -174,7 +159,7 @@ jQuery(document).ready(function($) {
     },
 
     url: function() {
-      return "http://docawards.com/doctors/get_doctors.json?disease_id=" + this.id + "&jsonp_callback=cbck"
+      return "http://docawards.com/doctors/get_doctors.json?disease_id=" + this.id
     },
   });
 
@@ -184,7 +169,7 @@ jQuery(document).ready(function($) {
     },
 
     url: function() {
-      return "http://docawards.com/doctors/get_doctors.json?speciality=" + this.id + "&jsonp_callback=cbck"
+      return "http://docawards.com/doctors/get_doctors.json?speciality=" + this.id
     },
   });
 
@@ -325,6 +310,24 @@ jQuery(document).ready(function($) {
   });
 
 
+
+  // Create Profile
+  window.CreateProfileView = Backbone.View.extend({
+    className: "row create_profile",
+    id: "content",
+    template: _.template($("#create_profile").html()),
+
+    initialize: function() {
+      this.render();
+    },
+
+    render: function() {
+      $(this.el).html(this.template());
+      $("body").append(this.el);
+    }
+  })
+
+
   // Router
   var AppRouter = Backbone.Router.extend({
     routes:{
@@ -332,12 +335,26 @@ jQuery(document).ready(function($) {
         "doctor/:id"      :       "doctorProfile",
         "disease/:id"     :       "diseaseListing",
         "speciality/:id"  :       "specialityListing",
-        "city"            :       "city"
+        "city"            :       "city",
+        "create_profile"  :       "createProfile",
+        "create_profile/:id":       "createProfileTab"
     },
 
     home: function()  {
       var landing_view = new HomeView();
       var footer_view = new FooterView();
+
+
+      // Show Modals
+      $('.signup').on("click", function() {
+        $('#signup_modal').reveal();
+      });
+
+      $('.login').on("click",function() {
+        $('#login_modal').reveal();
+      });
+
+
 
       $(".chzn-select").chosen();
       window.autocomplete_select();
@@ -407,6 +424,28 @@ jQuery(document).ready(function($) {
       var header_view = new HeaderView();
       var city_view = new CityContainer();
 
+    },
+
+    createProfile: function() {
+      var header_view = new HeaderView();
+      var create_profile_view = new CreateProfileView();
+    },
+
+    createProfileTab: function(id) {
+      var header_view = new HeaderView();
+      var create_profile_view = new CreateProfileView();
+      var $tab = $('a[href="#create_profile/' + id + '"]').parent('dd'),
+          $activeTab = $tab.closest('dl').find('dd.active');
+
+      var contentLocation = "#" + id + 'Tab';
+      //Show Tab Content
+      $(contentLocation).closest('.tabs-content').children('li').removeClass('active').hide();
+      $(contentLocation).css('display', 'block').addClass('active');
+      
+      $activeTab.removeClass('active');
+      $tab.addClass('active');
+
+      
     }
 
 
