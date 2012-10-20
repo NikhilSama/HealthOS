@@ -4,6 +4,23 @@
  * Author: Bharani Muthukumaraswamy <bharani91@gmail.com>
  * Author URL: http://abhayam.co.in
  --------------------------------------------*/
+ $.fn.serializeFormJSON = function() {
+
+   var o = {};
+   var a = this.serializeArray();
+   $.each(a, function() {
+       if (o[this.name]) {
+           if (!o[this.name].push) {
+               o[this.name] = [o[this.name]];
+           }
+           o[this.name].push(this.value || '');
+       } else {
+           o[this.name] = this.value || '';
+       }
+   });
+   return o;
+};
+
 
 jQuery(document).ready(function($) {
   window.initialize_map = function(obj)  {
@@ -55,22 +72,78 @@ jQuery(document).ready(function($) {
       });
       
   }
+
+  Backbone.emulateHTTP = true;
+
+
   
+  // Test Model
+  window.City = Backbone.Model.extend({
+
+    methodUrl: {
+      'create': 'http://docawards.com/cities/add',
+    },
+
+    sync: function(method, model, options) {
+      if (model.methodUrl && model.methodUrl[method.toLowerCase()]) {
+        options = options || {};
+        options.type = "post";
+        options.url = model.methodUrl[method.toLowerCase()];
+      }
+      console.log("Syncing", model.toJSON());
+      $.ajax({
+        type: 'POST',
+        url: options.url,
+        data: model.toJSON(),
+        success: function(data) {
+          alert("added city")
+        }
+      });
+      
+    }
+  });
+
+  window.CityContainer = Backbone.View.extend({
+    className: "testing",
+    template: _.template($("#city_template").html()),
+    
+    events: {
+      "click #submit": "submit_form"
+    },
+
+    initialize: function() {
+      this.render();
+    },
+
+
+    render: function() {
+      $(this.el).html(this.template());
+      $("body").append(this.el);
+    },
+
+    submit_form: function() {
+      var content = this.$("form").serializeFormJSON();
+      window.city = new City(content);
+      city.save();
+      return false;
+    }
+  })
+
   // Models
   window.Doctor = Backbone.Model.extend({
-    sync: function(method, model, options) {
-      options = options || {};
-      options.dataType = "jsonp"; 
-      options.jsonpCallback = "cbck";
-      Backbone.sync(method, model, options);
-    },
+    // sync: function(method, model, options) {
+    //   options = options || {};
+    //   options.dataType = "jsonp"; 
+    //   options.jsonpCallback = "cbck";
+    //   Backbone.sync(method, model, options);
+    // },
 
     initialize: function (options) {
       this.id = options.id;  
     },
 
     url: function() {
-      return "http://docawards.com/doctors/get_doctors.json?doctor_id=" + this.id + "&jsonp_callback=cbck"
+      return "http://docawards.com/doctors/get_doctors.json?doctor_id=" + this.id
     },
 
     parse: function(resp) {
@@ -258,7 +331,8 @@ jQuery(document).ready(function($) {
         ""                :       "home",
         "doctor/:id"      :       "doctorProfile",
         "disease/:id"     :       "diseaseListing",
-        "speciality/:id"  :       "specialityListing"
+        "speciality/:id"  :       "specialityListing",
+        "city"            :       "city"
     },
 
     home: function()  {
@@ -327,6 +401,12 @@ jQuery(document).ready(function($) {
       var jumbotron_view = new JumbotronView();
       var doctor_list = new SpecialityDoctorList({ id: id });
       var doctor_list_view = new DoctorListView({collection: doctor_list});
+    },
+
+    city: function() {
+      var header_view = new HeaderView();
+      var city_view = new CityContainer();
+
     }
 
 
