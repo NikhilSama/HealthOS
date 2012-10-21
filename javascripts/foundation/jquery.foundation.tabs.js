@@ -27,6 +27,7 @@
         //Show Tab Content
         $(contentLocation).closest('.tabs-content').children('li').removeClass('active').hide();
         $(contentLocation).css('display', 'block').addClass('active');
+        window.app.createProfileTab(target)
       }
 
       //Make Tab Active

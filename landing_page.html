@@ -50,13 +50,6 @@
         </ul>
 
         <ul class="right">
-          <!-- <li class="divider"></li>
-          <li class="search">
-            <form class="collapse">
-              <input type="text" placeholder="eg: Diabetes">
-              <button type="submit" class="secondary radius button">Search</button>
-            </form>
-          </li> -->
 
           
           
@@ -72,14 +65,33 @@
   </script>
 
   <script type="text/template" id="landing_template">
-      <div id="signup_modal" class="reveal-modal [expand, xlarge, large, medium, small]">
-        <h2>Awesome. I have it.</h2>
-        <p class="lead">Your couch.  I its mine.</p>
-        <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+      <div id="signup_modal" class="reveal-modal">
+        <h3>Signup for DocAwards</h3>
+        <form method="post" id="signup_form">
+          <div class="field">
+            <label>Username</label>
+            <input name="data[User][username]" maxlength="45" type="text" placeholder="nikhil_sama">
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <input name="data[User][password]" maxlength="45" type="password" placeholder="Secret Password">
+          </div>
+
+          <div class="field">
+            <label>Role</label>
+            <input name="data[User][role]" maxlength="45" type="text" placeholder="doctor" value="Doctor">
+          </div>
+
+          <div class="field">
+            <input type="submit" id="signup_btn" class="button primary right" value="Signup!">
+          </div>
+        </form>
+        
         <a class="close-reveal-modal">&#215;</a>
       </div>
 
-      <div id="login_modal" class="reveal-modal [expand, xlarge, large, medium, small]">
+      <div id="login_modal" class="reveal-modal">
         <h2>Awesome. I have it.</h2>
         <p class="lead">Your couch.  I its mine.</p>
         <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
@@ -272,13 +284,14 @@
                   <% console.log(consultations) %>
                   <% _.each(consultations, function(consultation) { %>
                     <tr>
-                      <td>Mon, Wed, Thursday</td>
-                      
-                      <td><%= consultation["ConsultTiming"][0]["start"] %> to <%= consultation["ConsultTiming"][0]["end"] %></td>
-                      <td><%= consultation["ConsultTiming"][0]["ConsultType"]["name"] %></td>
-                      <td><strong><%= consultation["Location"]["name"] %></strong>
-                        <p><%= consultation["Location"]["address"] %>, <%= consultation["Location"]["City"]["name"] %> - <%= consultation["Location"]["PinCode"]["pin_code"] %></p>
-                      </td>
+                      <% if(consultation["ConsultTiming"][0]) { %>
+                        <td>Mon, Wed, Thursday</td>
+                        <td><%= consultation["ConsultTiming"][0]["start"] %> to <%= consultation["ConsultTiming"][0]["end"] %></td>
+                        <td><%= consultation["ConsultTiming"][0]["ConsultType"]["name"] %></td>
+                        <td><strong><%= consultation["Location"]["name"] %></strong>
+                          <p><%= consultation["Location"]["address"] %>, <%= consultation["Location"]["City"]["name"] %> - <%= consultation["Location"]["PinCode"]["pin_code"] %></p>
+                        </td>
+                      <% } %>
                       
                     </tr>
                   <% }); %>
@@ -306,7 +319,7 @@
   </script>
 
   <script type="text/template" id="feed_entry">
-      <div class="row ">
+      <div class="row inner">
         <div class="three columns">
           <a href="#" class="th"><img src="http://docawards.com/<%= Doctor.image %>" /></a>
         </div>
@@ -387,6 +400,545 @@
   </form>
 </script>
 
+<script type="text/template" id="personal_details_template">
+  <div class="row">
+        <div class="twelve columns">
+          <form class="personal_details" method="post">
+
+            <input type="hidden" value="<%= id %>" name="data[Doctor][user_id]">
+
+            <div class="field">
+              <div class="row">
+                <div class="six columns">
+                  <label>First Name</label>
+                  <input type="text" name="data[Doctor][first_name]" placeholder="First Name">
+                </div>
+                <div class="three columns">
+                  <label>Middle Name</label>
+                  <input type="text" name="data[Doctor][middle_name]" placeholder="Middle Name">
+                </div>
+                <div class="three columns">
+                  <label>Last Name</label>
+                  <input type="text" name="data[Doctor][last_name]" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="row select_row">
+              <label>Date of Birth</label>
+              <div class="four columns">
+                <select name="data[Doctor][DOB][month]" id="DoctorDOBMonth">
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </select>
+              </div><!--four columns-->
+
+              <div class="four columns">
+                <select name="data[Doctor][DOB][day]" id="DoctorDOBDay">
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                </select>
+              </div><!--four columns-->
+
+              <div class="four columns">
+                <select name="data[Doctor][DOB][year]" id="DoctorDOBYear">
+                <option value="2032">2032</option>
+                <option value="2031">2031</option>
+                <option value="2030">2030</option>
+                <option value="2029">2029</option>
+                <option value="2028">2028</option>
+                <option value="2027">2027</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+                <option value="1994">1994</option>
+                <option value="1993">1993</option>
+                <option value="1992">1992</option>
+                </select>
+              </div><!--four columns-->
+              </div><!--row-->
+            </div><!--field-->
+
+            <div class="field">
+              <label>Profile Photo</label>
+              <input type="text" name="data[Doctor][image]" value="dummy_image.jpg" id="DoctorImage">
+            </div>
+
+            <div class="field">
+              <label>First Year Of Practice</label>
+              <textarea name="data[Doctor][first_yr_of_practice]"></textarea>
+            </div>
+
+            <div class="field">
+              <label>One-line Bio</label>
+              <input type="text" name="data[Doctor][one_line_intro]" placeholder="Your One-line Introduction">
+            </div>
+
+            
+          </form>      
+
+
+        </div>
+      </div><!--row-->
+
+      <div class="row">
+        <div class="right button_list">
+          <a href="#" class="button tiny secondary prev disabled">Previous</a>
+          <a href="#create_profile/specializations" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+</script>
+
+<script type="text/template" id="specializations_template">
+  <div class="row">
+        <div class="twelve columns">
+          <form class="specializations" method="post">
+            <input type="hidden" value="<%= id %>" name="data[Docspeclink][doctor_id]">
+
+            <div class="field">
+              <label>Speciality</label>
+              <select name="data[Docspeclink][specialty_id]" id="DocspeclinkSpecialtyId">
+                  <option value="2">Allergy</option>
+                  <option value="1">Allergy and Immunology</option>
+                  <option value="3">Anesthesiology (Anesthesia)</option>
+                  <option value="4">Audiology (Hearing, Ear)</option>
+                  <option value="5">Cardiac Electrophysiology</option>
+                  <option value="6">Cardiology (Heart)</option>
+                  <option value="7">Cardiovascular (Heart) Surgery</option>
+                  <option value="8">Carniofacial Surgery (Facial Plastic Surgery)</option>
+                  <option value="9">Certified Nurse Midwife</option>
+                  <option value="10">Certified Registered Nurse Anesthetist</option>
+                  <option value="11">Chemical Pathology</option>
+                  <option value="12">Clinical and Laboratory Immunology</option>
+                  <option value="13">Dentistry,A dental practitioner specializes in the care and treatment of the teeth and gums.
+                  </option>
+                  <option value="14">Dermatology (Skin, hair, nails)</option>
+                  <option value="15">Diagnostic Radiology</option>
+                  <option value="16">Ear Nose and Throat - Otorhinolaryngology</option>
+                  <option value="17">Emergency Medicine (ER)</option>
+                  <option value="18">Endocrinology (Thyroid, Adrenal, Diabetes etc.)</option>
+                  <option value="19">Family Practice</option>
+                  <option value="20">Gastroenterology (Stomach &amp; Digestive Disorders)</option>
+                  <option value="21">General and Vascular Surgery</option>
+                  <option value="22">General Surgery</option>
+                  <option value="23">General Vascular Surgery</option>
+                  <option value="24">Hand and Plastic Surgery</option>
+                  <option value="25">Hematology / Oncology (Blood and Cancer)</option>
+                  <option value="26">Infectious Disease</option>
+                  <option value="27">Internal Medicine</option>
+                  <option value="28">Nephrology (Kidney, Blood Pressure)</option>
+                  <option value="29">Neuro-Oncology (Cancer &amp; Tumors)</option>
+                  <option value="30">Neurological Surgery (Nerves)</option>
+                  <option value="31">Neurology (Nerves, Spinal Cord, Nerves)</option>
+                  <option value="32">Nurse Practitioner</option>
+                  <option value="33">Obstetrics / Gynecology / Pregnancy</option>
+                  <option value="34">Occupational Medicine</option>
+                  <option value="35">Oncology (Cancer)</option>
+                  <option value="36">Ophthalmology (Eye, Vision)</option>
+                  <option value="37">Oral and Maxillofacial Surgery</option>
+                  <option value="38">Orthodontics (Tooth Braces)</option>
+                  <option value="39">Orthopedic Surgery (Fracture, Tear, Joint Dislocation)</option>
+                  <option value="40">Otolaryngology (Tonsil, thyroid, neck etc)</option>
+                  <option value="41">Pain Management</option>
+                  <option value="42">Pain Medicine</option>
+                  <option value="43">Pathology (Laboratories)</option>
+                  <option value="44">Pediatric Nurse Practitioner</option>
+                  <option value="45">Pediatrics (Infants and Children)</option>
+                  <option value="46">Perinatology (Infants before birth)</option>
+                  <option value="47">Plastic and Reconstructive Surgery</option>
+                  <option value="48">Podiatry (Foot, Lower leg)</option>
+                  <option value="49">Proctology (Anus, Rectum, Colon)</option>
+                  <option value="50">Prosthetics/Orthotics (Artificial Limbs)</option>
+                  <option value="51">Psychiatry (Mental Disorders)</option>
+                  <option value="52">Psychology - Clinical</option>
+                  <option value="53">Pulmonary Medicine (Chest Medicine, Lung Specialist)</option>
+                  <option value="54">Radiation Oncology</option>
+                  <option value="55">Radiology (X-RAY, MRI, Ultrasound Imaging etc)</option>
+                  <option value="56">Rheumatology (Bone, Joints)</option>
+                  <option value="57">Sleep Medicine</option>
+                  <option value="58">Spine Surgery</option>
+                  <option value="59">Sports Medicine</option>
+                  <option value="60">Thoracic Surgery</option>
+                  <option value="61">Urology</option>
+                  <option value="62">Vascular Medicine</option>
+                  </select>
+            </div>
+
+            
+
+            <div class="new_speciality panel">
+              <div class="row">
+                <div class="field">
+                  Couldnt find your speciality in this list? <strong>Add your speciality here</strong>
+                </div>
+                
+                <div class="field">
+                  <label>Name of speciality</label>
+                  <input name="data[Specialty][name]" maxlength="100" type="text">
+                </div>
+
+                <div class="field">
+                  <label>Description</label>
+                  <input name="data[Specialty][description]" type="text">
+                </div>
+
+                <div class="field">
+                  <input type="submit" value="Add Speciality" class="button success tiny right">
+                </div>
+              </div>
+            </div><!--new_speciality-->
+
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/personal_details" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/qualifications" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+</script>
+
+<script type="text/template" id="qualifications_template">
+    <div class="row">
+        <div class="twelve columns">
+          <form class="qualifications" method="post">
+
+            <input type="hidden" value="<%= id %>" name="data[Qualification][doctor_id]">
+
+
+            <div class="field">
+              <label>Degree</label>
+              <select name="data[Qualification][degree_id]" id="QualificationDegreeId">
+                <option value="4">Fellowship - Pulmonology</option>
+                <option value="1">MBBS</option>
+                <option value="2">MD</option>
+                <option value="3">Residency</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Location</label>
+              <select name="data[Qualification][location_id]" id="QualificationLocationId">
+                <option value="2">Sama Chest Center</option>
+                <option value="3">Sir Ganga Ram Hospital</option>
+                <option value="4">St Lukes Rosevelt Hospital</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Year</label>
+              <textarea name="data[Qualification][year]" cols="30" rows="6" id="QualificationYear"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Department</label>
+              <input name="data[Qualification][dept]" maxlength="45" type="text" id="QualificationDept">
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/specializations" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/experiences" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+</script>
+
+<script type="text/template" id="experiences_template">
+  <div class="row">
+        <div class="twelve columns">
+          <form class="experiences" method="post">
+
+            <input type="hidden" value="<%= id %>" name="data[Experience][doctor_id]">
+
+
+            <div class="field">
+              <div class="row select_row">
+              <label>From</label>
+              <div class="four columns">
+                <select name="data[Experience][from][month]" id="ExperienceFromMonth">
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div><!--four columns-->
+
+              <div class="four columns">
+                <select name="data[Experience][from][day]" id="ExperienceFromDay">
+                  <option value="01">1</option>
+                  <option value="02">2</option>
+                  <option value="03">3</option>
+                  <option value="04">4</option>
+                  <option value="05">5</option>
+                  <option value="06">6</option>
+                  <option value="07">7</option>
+                  <option value="08">8</option>
+                  <option value="09">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+              </div><!--four columns-->
+
+              <div class="four columns">
+                <select name="data[Experience][from][year]" id="ExperienceFromYear">
+                  <option value="2032">2032</option>
+                  <option value="2031">2031</option>
+                  <option value="2030">2030</option>
+                  <option value="2029">2029</option>
+                  <option value="2028">2028</option>
+                  <option value="2027">2027</option>
+                  <option value="2026">2026</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="2009">2009</option>
+                  <option value="2008">2008</option>
+                  <option value="2007">2007</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+                  <option value="1999">1999</option>
+                  <option value="1998">1998</option>
+                  <option value="1997">1997</option>
+                  <option value="1996">1996</option>
+                  <option value="1995">1995</option>
+                  <option value="1994">1994</option>
+                  <option value="1993">1993</option>
+                  <option value="1992">1992</option>
+                </select>
+              </div><!--four columns-->
+              </div><!--row-->
+            </div><!--field-->
+
+
+            <div class="field">
+              <label>To</label>
+              <input name="data[Experience][to]" maxlength="45" type="text" id="ExperienceTo">
+              
+            </div><!--field-->
+
+            <div class="field">
+              <label>Department</label>
+              <input name="data[Experience][dept]" maxlength="45" type="text" id="ExperienceDept">
+            </div>
+
+            <div class="field">
+              <label>Location</label>
+              <select name="data[Qualification][location_id]" id="QualificationLocationId">
+                <option value="2">Sama Chest Center</option>
+                <option value="3">Sir Ganga Ram Hospital</option>
+                <option value="4">St Lukes Rosevelt Hospital</option>
+              </select>
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/qualifications" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/consultation" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+
+</script>
+
+<script type="text/template" id="consultation_template">
+  <div class="row">
+        <div class="twelve columns">
+          <form class="consultation" method="post">
+
+            <input type="hidden" value="<%= id %>" name="data[Docconsultlocation][doctor_id]">
+
+
+            <div class="field">
+              <label>Location</label>
+              <select name="data[Docconsultlocation][location_id]" id="DocconsultlocationLocationId">
+                <option value="2">Sama Chest Center</option>
+                <option value="3">Sir Ganga Ram Hospital</option>
+                <option value="4">St Lukes Rosevelt Hospital</option>
+              </select>
+            </div><!--field-->
+
+            <div class="field">
+              <label>Location Type</label>
+              <select name="data[Docconsultlocation][consultlocationtype_id]" id="DocconsultlocationConsultlocationtypeId">
+                <option value="1">HOSPITAL</option>
+                <option value="2">HOME_CLINIC</option>
+                <option value="3">OPD CLINIC</option>
+              </select>
+            </div><!--field-->
+
+            <div class="field">
+              <label>Additional Information</label>
+              <input name="data[Docconsultlocation][addl]" maxlength="45" type="text" id="DocconsultlocationAddl">
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="right button_list">
+          <a href="#create_profile/experiences" class="button tiny secondary prev">Previous</a>
+          <a href="#create_profile/contact_details" class="button tiny primary next">Next</a>
+        </div>
+      </div>
+</script>
+
+<script type="text/template" id="contact_details_template">
+  <div class="row">
+    <div class="twelve columns">
+      <form class="contact_details" method="post">
+
+        <input type="hidden" value="<%= id %>" name="data[DoctorContact][doctor_id]">
+
+
+        <div class="field">
+          <label>Phone Number</label>
+          <input name="data[DoctorContact][phone]" maxlength="45" type="text" id="DoctorContactPhone">
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input name="data[DoctorContact][email]" maxlength="150" type="text" id="DoctorContactEmail">
+        </div>
+
+        <div class="field">
+          <label>Type</label>
+          <input name="data[DoctorContact][type]" maxlength="45" type="text" id="DoctorContactType">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="right button_list">
+      <a href="#create_profile/consultation" class="button tiny secondary prev">Previous</a>
+      <a href="#" class="button tiny success next save">Create</a>
+    </div>
+  </div>
+</script>
+
+
 <script type="text/template" id="create_profile">
   <dl class="tabs contained">
     <dd class="active"><a href="#create_profile/personal_details">Personal Details</a></dd>
@@ -399,96 +951,12 @@
 
 
   <ul class="tabs-content contained">
-    <li class="active" id="personal_detailsTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#" class="button tiny secondary prev disabled">Previous</a>
-          <a href="#create_profile/specializations" class="button tiny primary next">Next</a>
-        </div>
-      </div>
-
-    </li>
-
-
-    <li id="specializationsTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#create_profile/personal_details" class="button tiny secondary prev">Previous</a>
-          <a href="#create_profile/qualifications" class="button tiny primary next">Next</a>
-        </div>
-      </div>
-
-    </li>
-
-
-    <li id="qualificationsTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#create_profile/specializations" class="button tiny secondary prev">Previous</a>
-          <a href="#create_profile/experiences" class="button tiny primary next">Next</a>
-        </div>
-      </div>
-    </li>
-
-
-    <li id="experiencesTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#create_profile/qualifications" class="button tiny secondary prev">Previous</a>
-          <a href="#create_profile/consultation" class="button tiny primary next">Next</a>
-        </div>
-      </div>
-    </li>
-
-
-    <li id="consultationTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#create_profile/experiences" class="button tiny secondary prev">Previous</a>
-          <a href="#create_profile/contact_details" class="button tiny primary next">Next</a>
-        </div>
-      </div>
-    </li>
-
-
-    <li id="contact_detailsTab">
-      <div class="row">
-        <div class="twelve columns">
-          This is simple tab 1s content. Pretty neat, huh?
-        </div>
-      </div>
-      <div class="row">
-        <div class="right button_list">
-          <a href="#create_profile/consultation" class="button tiny secondary prev">Previous</a>
-          <a href="#" class="button tiny success next save disabled">Create</a>
-        </div>
-      </div>
-    </li>
+    <li class="active" id="personal_detailsTab"></li>
+    <li id="specializationsTab"></li>
+    <li id="qualificationsTab"></li>
+    <li id="experiencesTab"></li>
+    <li id="consultationTab"></li>
+    <li id="contact_detailsTab"></li>
   </ul>
 
 

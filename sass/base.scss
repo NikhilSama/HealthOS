@@ -177,6 +177,9 @@ section.jumbotron {
     padding: 20px;
     border: 1px solid $medium_gray;
     border-top: 4px solid $light_blue;
+    height: 240px;
+    max-height: 240px;
+    min-height: 240px;
     &:hover {
       border-top: 4px solid $dark_blue;
       .meta.bottom {
@@ -204,7 +207,7 @@ section.jumbotron {
 
       &.bottom {
         position: relative;
-        top: 20px;
+        bottom: 0px;
         height: 52px;
         background: $light_blue;
         a.button {
@@ -272,6 +275,10 @@ section.jumbotron {
         padding-top: 5px;
       }
     }
+  }
+
+  .row.inner {
+    height: 160px;
   }
 
 
@@ -545,6 +552,28 @@ section.jumbotron {
 
 .create_profile {
   margin-top: 80px !important;
+  textarea {
+    height: 120px;
+  }
+  .row.select_row {
+    margin-left: 0; 
+  }
+}
+
+.field {
+  margin-top: 20px;
+}
+
+.field:first-child {
+  margin-top: 0;
+}
+
+.button_list {
+  margin-top: 20px;
+}
+
+.new_speciality {
+  margin-top: 40px;
 }
 
 

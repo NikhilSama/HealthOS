@@ -37,7 +37,6 @@ jQuery(document).ready(function($) {
       
       var map = new google.maps.Map(document.getElementById('map'), options);
       _.each(obj, function(location) {
-        console.log(location);
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(location["lat"], location["long"]), 
           title: location["name"],
@@ -144,6 +143,14 @@ jQuery(document).ready(function($) {
   });
 
 
+  window.User = Backbone.Model.extend({
+    initialize: function(options) {
+      this.id = options.id,
+      this.username = options.username
+    },
+  });
+
+
   // For Doc listing page
   window.DoctorHeadShot = Backbone.Model.extend();
 
@@ -181,7 +188,6 @@ jQuery(document).ready(function($) {
     },
 
     render:function () {
-      console.log(this.model.toJSON());
       $(this.el).html(this.template(this.model.toJSON()));
       return this;
     },
@@ -195,7 +201,6 @@ jQuery(document).ready(function($) {
       var that = this;
       this.collection.fetch({
         success: function(collection) {
-          console.log(collection);
           that.render();
         }
       })
@@ -204,14 +209,14 @@ jQuery(document).ready(function($) {
       var that = this;
       _.each(this.collection.models, function(doctor) {
         var profile = new DoctorHeadShotView({model: doctor});
-        $(that.el).empty();
-        $(profile.el).wrapInChunks('<div class="row" />', 2).appendTo($(that.el));
-
-
-        
+        console.log(profile.el)
+        $(that.el).append(profile.el);
       });
 
-      $("body").append(this.el);
+      console.log(this.el);
+      $(this.el).find(".feed_entry").wrapInChunks('<div class="row" />', 2).appendTo($(this.el));
+      $("body").append(this.el)
+
       $(document).foundationButtons();
     }
 
@@ -271,9 +276,38 @@ jQuery(document).ready(function($) {
       this.render();
     },
 
+    events: {
+      "submit #signup_form": "signup"
+    },
+
     render: function()  {
-      $("body").html(this.template());
-    } 
+      $(this.el).html(this.template())
+      $("body").html(this.el);
+    },
+
+    signup: function() {
+      var $form = this.$("#signup_modal").find("form"),
+          form_data = $form.serializeFormJSON();
+
+      console.log(JSON.stringify(form_data));
+
+      $.ajax({
+        type: 'POST',
+        url: "http://docawards.com/users/add",
+        data: form_data,
+        success: function(response) {
+          var new_id = parseInt($(response).find("#content table tr:last td:first").text()),
+              new_username = $(response).find("#content table tr:last td:nth-child(2)").text(),
+              user = new User({id: new_id})
+
+          window.current_user = user;
+
+          console.log(window.current_user);
+          window.app.navigate("#create_profile", true);
+        }
+      });
+      return false;
+    }
   });
 
   window.FooterView = Backbone.View.extend({
@@ -318,18 +352,101 @@ jQuery(document).ready(function($) {
     template: _.template($("#create_profile").html()),
 
     initialize: function() {
+      this.urls = {
+        "specializations" : "http://docawards.com/docspeclinks/add",
+        "qualifications" : "http://docawards.com/qualifications/add",
+        "experiences" : "http://docawards.com/experiences/add",
+        "consultation" : "http://docawards.com/docconsultlocations/add",
+        "contact_details" : "http://docawards.com/doctor_contacts/add",
+
+      };
       this.render();
     },
 
     render: function() {
       $(this.el).html(this.template());
       $("body").append(this.el);
+    },
+
+  });
+
+  window.FormData = Backbone.Model.extend({
+    initialize: function(options) {
+      this.url = options.url;
+      var that = this;
+    },
+
+    sync: function(method, model, options) {
+      console.log("Syncing", model.toJSON());
+      $.ajax({
+        type: 'POST',
+        url: this.url,
+        data: model.toJSON(),
+        success: function(data) {
+          console.log(this.url);
+          //save Doctor ID
+          if(this.url == "http://docawards.com/doctors/add") {
+            console.log(data);
+            console.log("Getting Doctor ID")
+            var new_id = parseInt($(data).find("#content tr:last-child td:first-child").text());
+            window.current_doctor = new User({id: new_id});
+            app.navigate("#create_profile/specializations", true)
+          }
+        }
+      });
+    }
+
+
+  });
+
+
+  window.ProfileFormView = Backbone.View.extend({
+    initialize: function(options) {
+      var urls = {
+        "personal_details" : "http://docawards.com/doctors/add",
+        "specializations" : "http://docawards.com/docspeclinks/add",
+        "qualifications" : "http://docawards.com/qualifications/add",
+        "experiences" : "http://docawards.com/experiences/add",
+        "consultation" : "http://docawards.com/docconsultlocations/add",
+        "contact_details" : "http://docawards.com/doctor_contacts/add",
+
+      };
+      this.model_url = urls[options.url];
+      this.el = options.el;
+      this.template = _.template($(options.template).html());
+      this.render();
+      console.log(this.model);
+    },
+
+    events: {
+      "click .next" : "submit_form" 
+    },
+
+    render: function() {
+      $(this.el).html(this.template(this.model.toJSON()));
+    },
+
+    submit_form: function() {
+      var data = new FormData({url: this.model_url});
+      data.set($(this.el).find("form").serializeFormJSON());
+
+      console.log(data);
+      data.save();
+      if(!window.current_doctor) {
+        return false;  
+      }
+      
+
     }
   })
 
 
+  
+
+
   // Router
   var AppRouter = Backbone.Router.extend({
+    
     routes:{
         ""                :       "home",
         "doctor/:id"      :       "doctorProfile",
@@ -403,6 +520,7 @@ jQuery(document).ready(function($) {
     doctorProfile: function(id)  {
       var header_view = new HeaderView();
       var doctor = new Doctor({id: id});
+      console.log(doctor);
       var doctor_view = new DoctorView({model: doctor});
     },
 
@@ -429,11 +547,22 @@ jQuery(document).ready(function($) {
     createProfile: function() {
       var header_view = new HeaderView();
       var create_profile_view = new CreateProfileView();
+      var form_view = new ProfileFormView({model: window.current_user, url: "personal_details", el: "li#personal_detailsTab", template: "#personal_details_template"});
     },
 
     createProfileTab: function(id) {
-      var header_view = new HeaderView();
-      var create_profile_view = new CreateProfileView();
+      var header_view = new HeaderView(),
+          create_profile_view = new CreateProfileView();
+      
+      var el = "li#" + id + "Tab",
+          template = "#" + id + "_template";
+
+      
+      var user_model = (id != "personal_details") ? window.current_doctor : window.current_user;
+
+
+      var form_view = new ProfileFormView({model: user_model, url: id, el: el, template: template});
+
       var $tab = $('a[href="#create_profile/' + id + '"]').parent('dd'),
           $activeTab = $tab.closest('dl').find('dd.active');
 
